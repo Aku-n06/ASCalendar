@@ -18,7 +18,7 @@
                         <constraint firstAttribute="height" constant="50" id="8e1-3V-1kq"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwU-oN-8Od" userLabel="daysV">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwU-oN-8Od" userLabel="daysV" customClass="ASBodyV" customModule="Example" customModuleProvider="target">
                     <rect key="frame" x="50" y="50" width="500" height="550"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>

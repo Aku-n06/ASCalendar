@@ -17,6 +17,7 @@
 		9CA210331CECA37D002061C3 /* ASCustomLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210321CECA37D002061C3 /* ASCustomLayer.swift */; };
 		9CA210351CECA4B2002061C3 /* ASCalendarV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210341CECA4B2002061C3 /* ASCalendarV.xib */; };
 		9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210361CECA4C3002061C3 /* ASCalendarV.swift */; };
+		9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210391CECB4C1002061C3 /* ASBodyV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9CA210321CECA37D002061C3 /* ASCustomLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCustomLayer.swift; path = Calendar/ASCustomLayer.swift; sourceTree = "<group>"; };
 		9CA210341CECA4B2002061C3 /* ASCalendarV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ASCalendarV.xib; path = Calendar/ASCalendarV.xib; sourceTree = "<group>"; };
 		9CA210361CECA4C3002061C3 /* ASCalendarV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendarV.swift; path = Calendar/ASCalendarV.swift; sourceTree = "<group>"; };
+		9CA210391CECB4C1002061C3 /* ASBodyV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASBodyV.swift; path = Calendar/ASBodyV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +82,7 @@
 			children = (
 				9CA2102D1CECA11B002061C3 /* ASCalendar.swift */,
 				9CA2102F1CECA155002061C3 /* ASCustomPopover.swift */,
-				9CA210341CECA4B2002061C3 /* ASCalendarV.xib */,
 				9CA210381CECB391002061C3 /* View */,
-				9CA210361CECA4C3002061C3 /* ASCalendarV.swift */,
 				9CA210321CECA37D002061C3 /* ASCustomLayer.swift */,
 			);
 			name = Calendar;
@@ -91,6 +91,9 @@
 		9CA210381CECB391002061C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9CA210341CECA4B2002061C3 /* ASCalendarV.xib */,
+				9CA210361CECA4C3002061C3 /* ASCalendarV.swift */,
+				9CA210391CECB4C1002061C3 /* ASBodyV.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				9CA2101E1CEC9E93002061C3 /* ViewController.swift in Sources */,
 				9CA210331CECA37D002061C3 /* ASCustomLayer.swift in Sources */,
 				9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */,
+				9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */,
 				9CA210301CECA155002061C3 /* ASCustomPopover.swift in Sources */,
 				9CA2102E1CECA11B002061C3 /* ASCalendar.swift in Sources */,
 				9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */,
