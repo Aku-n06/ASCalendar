@@ -12,6 +12,11 @@
 		9CA210211CEC9E93002061C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2101F1CEC9E93002061C3 /* Main.storyboard */; };
 		9CA210231CEC9E93002061C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210221CEC9E93002061C3 /* Assets.xcassets */; };
 		9CA210261CEC9E93002061C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210241CEC9E93002061C3 /* LaunchScreen.storyboard */; };
+		9CA2102E1CECA11B002061C3 /* ASCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2102D1CECA11B002061C3 /* ASCalendar.swift */; };
+		9CA210301CECA155002061C3 /* ASCustomPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2102F1CECA155002061C3 /* ASCustomPopover.swift */; };
+		9CA210331CECA37D002061C3 /* ASCustomLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210321CECA37D002061C3 /* ASCustomLayer.swift */; };
+		9CA210351CECA4B2002061C3 /* ASCalendarV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210341CECA4B2002061C3 /* ASCalendarV.xib */; };
+		9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210361CECA4C3002061C3 /* ASCalendarV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		9CA210221CEC9E93002061C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CA210251CEC9E93002061C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CA210271CEC9E93002061C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA2102D1CECA11B002061C3 /* ASCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendar.swift; path = Calendar/ASCalendar.swift; sourceTree = "<group>"; };
+		9CA2102F1CECA155002061C3 /* ASCustomPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCustomPopover.swift; path = Calendar/ASCustomPopover.swift; sourceTree = "<group>"; };
+		9CA210321CECA37D002061C3 /* ASCustomLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCustomLayer.swift; path = Calendar/ASCustomLayer.swift; sourceTree = "<group>"; };
+		9CA210341CECA4B2002061C3 /* ASCalendarV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ASCalendarV.xib; path = Calendar/ASCalendarV.xib; sourceTree = "<group>"; };
+		9CA210361CECA4C3002061C3 /* ASCalendarV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendarV.swift; path = Calendar/ASCalendarV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +66,33 @@
 			children = (
 				9CA2101B1CEC9E93002061C3 /* AppDelegate.swift */,
 				9CA2101D1CEC9E93002061C3 /* ViewController.swift */,
+				9CA210311CECA24B002061C3 /* Calendar */,
 				9CA2101F1CEC9E93002061C3 /* Main.storyboard */,
 				9CA210221CEC9E93002061C3 /* Assets.xcassets */,
 				9CA210241CEC9E93002061C3 /* LaunchScreen.storyboard */,
 				9CA210271CEC9E93002061C3 /* Info.plist */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		9CA210311CECA24B002061C3 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9CA2102D1CECA11B002061C3 /* ASCalendar.swift */,
+				9CA2102F1CECA155002061C3 /* ASCustomPopover.swift */,
+				9CA210341CECA4B2002061C3 /* ASCalendarV.xib */,
+				9CA210381CECB391002061C3 /* View */,
+				9CA210361CECA4C3002061C3 /* ASCalendarV.swift */,
+				9CA210321CECA37D002061C3 /* ASCustomLayer.swift */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		9CA210381CECB391002061C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA210351CECA4B2002061C3 /* ASCalendarV.xib in Resources */,
 				9CA210261CEC9E93002061C3 /* LaunchScreen.storyboard in Resources */,
 				9CA210231CEC9E93002061C3 /* Assets.xcassets in Resources */,
 				9CA210211CEC9E93002061C3 /* Main.storyboard in Resources */,
@@ -136,6 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA2101E1CEC9E93002061C3 /* ViewController.swift in Sources */,
+				9CA210331CECA37D002061C3 /* ASCustomLayer.swift in Sources */,
+				9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */,
+				9CA210301CECA155002061C3 /* ASCustomPopover.swift in Sources */,
+				9CA2102E1CECA11B002061C3 /* ASCalendar.swift in Sources */,
 				9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
