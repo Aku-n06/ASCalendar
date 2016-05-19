@@ -49,7 +49,7 @@ UIScrollViewDelegate {
     func showMonth(month : Int, year : Int) {
         self.currentMonth = month
         self.currentYear = year
-        self.reloadMiddleCell()
+        self.reloadCell(middleIndexPath)
     }
     
     //MARK: collectionView dataSource
@@ -72,21 +72,8 @@ UIScrollViewDelegate {
             forIndexPath: indexPath
         ) as! ASMonthCellV
         if (self.currentMonth != nil) {
-            //calculate month offset for the cell
-            var monthOffset = self.currentMonth!
-            var yearOffset = self.currentYear!
-            let offset = indexPath.row - 1
-            monthOffset = monthOffset + offset
-            if (monthOffset == 12) {
-                monthOffset = 1
-                yearOffset += 1
-            }
-            else if (monthOffset == 0) {
-                monthOffset = 12
-                yearOffset -= 1
-            }
-            //create month data
-            let month = ASMonthM(month: monthOffset, year: yearOffset)
+            let offset = calculateMonthOffset(indexPath.row)
+            let month = ASMonthM(month: offset.month, year: offset.year)
             cell.populate(month)
         }
         return cell
@@ -94,26 +81,31 @@ UIScrollViewDelegate {
     
     //MARK: scrollView delegate
     
+    var previusIndexPath = NSIndexPath(forItem: 0, inSection: 0)
     var middleIndexPath = NSIndexPath(forItem: 1, inSection: 0)
+    var nextIndexPath = NSIndexPath(forItem: 2, inSection: 0)
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if (scrollView.contentOffset.y <= 0) {
             self.switchMonth(false)
-            self.reloadMiddleCell()
+            self.reloadCell(previusIndexPath)
+            self.reloadCell(middleIndexPath)
             scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         } else if (scrollView.contentOffset.y >= self.frame.height * 2) {
             self.switchMonth(true)
-            self.reloadMiddleCell()
+            self.reloadCell(nextIndexPath)
+            self.reloadCell(middleIndexPath)
             scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         }
     }
     
     //MARK: private methods
     
-    internal func reloadMiddleCell() {
+    internal func reloadCell(indexPath : NSIndexPath) {
         if (self.currentMonth != nil) {
-            let cell = self.collectionView.cellForItemAtIndexPath(middleIndexPath) as? ASMonthCellV
-            let month = ASMonthM(month: self.currentMonth!, year: self.currentYear!)
+            let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as? ASMonthCellV
+            let offset = calculateMonthOffset(indexPath.row)
+            let month = ASMonthM(month: offset.month, year: offset.year)
             cell?.populate(month)
         }
     }
@@ -130,12 +122,28 @@ UIScrollViewDelegate {
             } else if (increment == true) {
                 //next month
                 self.currentMonth! += 1
-                if (self.currentMonth == 12) {
+                if (self.currentMonth == 13) {
                     self.currentMonth = 1
                     self.currentYear! += 1
                 }
             }
         }
+    }
+    
+    internal func calculateMonthOffset(row : Int) -> (month: Int, year: Int) {
+        var monthOffset = self.currentMonth!
+        var yearOffset = self.currentYear!
+        let offset = row - 1
+        monthOffset = monthOffset + offset
+        if (monthOffset == 13) {
+            monthOffset = 1
+            yearOffset += 1
+        }
+        else if (monthOffset == 0) {
+            monthOffset = 12
+            yearOffset -= 1
+        }
+        return (month: monthOffset, year: yearOffset)
     }
     
 }
