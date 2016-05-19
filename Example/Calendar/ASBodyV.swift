@@ -119,21 +119,23 @@ UIScrollViewDelegate {
     }
     
     internal func switchMonth(increment : Bool) {
-        //switch month
-        if (increment == false) {//previus
-            self.currentMonth! -= 1
-            if (self.currentMonth == 0) {
-                self.currentMonth = 12
-                self.currentYear! -= 1
-            }
-        } else if (increment == true) {//next
-            self.currentMonth! += 1
-            if (self.currentMonth == 12) {
-                self.currentMonth = 1
-                self.currentYear! += 1
+        if (self.currentMonth != nil) {
+            if (increment == false) {
+                //previus month
+                self.currentMonth! -= 1
+                if (self.currentMonth == 0) {
+                    self.currentMonth = 12
+                    self.currentYear! -= 1
+                }
+            } else if (increment == true) {
+                //next month
+                self.currentMonth! += 1
+                if (self.currentMonth == 12) {
+                    self.currentMonth = 1
+                    self.currentYear! += 1
+                }
             }
         }
-        print(self.currentMonth, " ", self.currentYear)
     }
     
 }

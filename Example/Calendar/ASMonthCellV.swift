@@ -11,6 +11,7 @@ import UIKit
 class ASMonthCellV: UICollectionViewCell {
     
     @IBOutlet var rowsV : Array<ASMonthRowV>!
+    @IBOutlet var rowsHeights : Array<NSLayoutConstraint>!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,12 +28,16 @@ class ASMonthCellV: UICollectionViewCell {
         for i in 0..<rowsV.count {
             //show or hide week
             rowsV[i].hidden = false
+            rowsHeights[i].constant = 1000
             if (i >= month.weeks.count) {
                 rowsV[i].hidden = true
+                rowsHeights[i].constant = 0
             } else {
                 rowsV[i].view.populate(month.weeks[i])
             }
         }
     }
+    
+    
     
 }
