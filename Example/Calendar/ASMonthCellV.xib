@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ASMonthCellV" customModule="Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4w-8f-i1p">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="iVD-wZ-Vp1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMI-Sd-TrT">
+                    <rect key="frame" x="0.0" y="599" width="600" height="1"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="7K5-L0-ubh"/>
+                        <constraint firstAttribute="height" constant="1" id="ARy-So-cg5"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDd-oF-pXa">
+                    <rect key="frame" x="291" y="289" width="30" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="RMI-Sd-TrT" secondAttribute="bottom" id="2E4-Va-bpZ"/>
+                <constraint firstItem="bDd-oF-pXa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8pM-x7-UeH"/>
+                <constraint firstItem="RMI-Sd-TrT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9ik-b1-gQM"/>
+                <constraint firstAttribute="trailing" secondItem="RMI-Sd-TrT" secondAttribute="trailing" id="ENy-dZ-07I"/>
+                <constraint firstItem="c4w-8f-i1p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KlJ-2v-8mx"/>
+                <constraint firstItem="bDd-oF-pXa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PaC-Jd-7qS"/>
+                <constraint firstAttribute="trailing" secondItem="c4w-8f-i1p" secondAttribute="trailing" id="dDw-dq-vc2"/>
+                <constraint firstItem="c4w-8f-i1p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gMM-ih-npJ"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

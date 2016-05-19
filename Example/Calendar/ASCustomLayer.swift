@@ -127,6 +127,8 @@ class ASCustomLayer: UIView {
             widthConstraint,
             heightConstraint]
         )
+        //apply layout
+        self.layoutIfNeeded()
     }
     
     internal func loadViewFromNib() -> UIView {

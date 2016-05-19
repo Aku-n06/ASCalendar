@@ -18,6 +18,8 @@
 		9CA210351CECA4B2002061C3 /* ASCalendarV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210341CECA4B2002061C3 /* ASCalendarV.xib */; };
 		9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210361CECA4C3002061C3 /* ASCalendarV.swift */; };
 		9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210391CECB4C1002061C3 /* ASBodyV.swift */; };
+		9CA210401CECBA52002061C3 /* ASMonthCellV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2103F1CECBA52002061C3 /* ASMonthCellV.swift */; };
+		9CA210421CECBE7D002061C3 /* ASMonthCellV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210411CECBE7D002061C3 /* ASMonthCellV.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9CA210341CECA4B2002061C3 /* ASCalendarV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ASCalendarV.xib; path = Calendar/ASCalendarV.xib; sourceTree = "<group>"; };
 		9CA210361CECA4C3002061C3 /* ASCalendarV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendarV.swift; path = Calendar/ASCalendarV.swift; sourceTree = "<group>"; };
 		9CA210391CECB4C1002061C3 /* ASBodyV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASBodyV.swift; path = Calendar/ASBodyV.swift; sourceTree = "<group>"; };
+		9CA2103F1CECBA52002061C3 /* ASMonthCellV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASMonthCellV.swift; path = Calendar/ASMonthCellV.swift; sourceTree = "<group>"; };
+		9CA210411CECBE7D002061C3 /* ASMonthCellV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ASMonthCellV.xib; path = Calendar/ASMonthCellV.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 				9CA210341CECA4B2002061C3 /* ASCalendarV.xib */,
 				9CA210361CECA4C3002061C3 /* ASCalendarV.swift */,
 				9CA210391CECB4C1002061C3 /* ASBodyV.swift */,
+				9CA2103F1CECBA52002061C3 /* ASMonthCellV.swift */,
+				9CA210411CECBE7D002061C3 /* ASMonthCellV.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA210421CECBE7D002061C3 /* ASMonthCellV.xib in Resources */,
 				9CA210351CECA4B2002061C3 /* ASCalendarV.xib in Resources */,
 				9CA210261CEC9E93002061C3 /* LaunchScreen.storyboard in Resources */,
 				9CA210231CEC9E93002061C3 /* Assets.xcassets in Resources */,
@@ -175,6 +182,7 @@
 				9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */,
 				9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */,
 				9CA210301CECA155002061C3 /* ASCustomPopover.swift in Sources */,
+				9CA210401CECBA52002061C3 /* ASMonthCellV.swift in Sources */,
 				9CA2102E1CECA11B002061C3 /* ASCalendar.swift in Sources */,
 				9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */,
 			);
@@ -328,6 +336,7 @@
 				9CA2102C1CEC9E93002061C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
