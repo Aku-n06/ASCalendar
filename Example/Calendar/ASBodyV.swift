@@ -47,7 +47,10 @@ UIScrollViewDelegate {
         self.collectionView.pagingEnabled = true
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.registerNib(UINib(nibName: "ASMonthCellV", bundle: nil), forCellWithReuseIdentifier: "Cell")
+        self.collectionView.registerNib(
+            UINib(nibName: "ASMonthCellV", bundle: nil),
+            forCellWithReuseIdentifier: "Cell"
+        )
         self.collectionView.collectionViewLayout = collapsedLayout
         self.collectionView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
     }
@@ -55,9 +58,11 @@ UIScrollViewDelegate {
     //MARK: public methods
     
     func showMonth(month : Int, year : Int) {
-        self.currentMonth = month
-        self.currentYear = year
-        self.reloadCell(middleIndexPath)
+        if (self.currentMonth != month && self.currentYear != year) {
+            self.currentMonth = month
+            self.currentYear = year
+            self.reloadCell(middleIndexPath)
+        }
     }
     
     //MARK: collectionView dataSource
