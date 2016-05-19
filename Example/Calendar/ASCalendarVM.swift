@@ -10,11 +10,11 @@ import Foundation
 
 class ASCalendarVM: NSObject{
     
-    var month: Dynamic<ASMonthM>!
+    var selectedMonth: Dynamic<(month : Int, year : Int)>!
     
-    init(month : ASMonthM) {
+    init(month : Int, year : Int) {
         super.init()
-        self.month = Dynamic(month)
+        selectedMonth = Dynamic(month : month, year : year)
     }
     
 }

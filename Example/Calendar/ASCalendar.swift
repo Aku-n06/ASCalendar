@@ -25,7 +25,7 @@ class ASCalendar: NSObject {
     }
     
     func goToPage(month: Int, year: Int) {
-        self.calendarVM = ASCalendarVM(month: ASMonthM(month: month, year: year))
+        self.calendarVM = ASCalendarVM(month: month, year: year)
         self.calendarV.viewModel = self.calendarVM
     }
     

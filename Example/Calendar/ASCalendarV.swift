@@ -15,9 +15,9 @@ class ASCalendarV: UIView {
     
     var viewModel: ASCalendarVM! {
         didSet {
-            viewModel.month.bindAndFire {
+            viewModel.selectedMonth.bindAndFire {
                 [unowned self] in
-                self.bodyV.showMonth($0)
+                self.bodyV.showMonth($0.month, year: $0.year)
             }
         }
     }
