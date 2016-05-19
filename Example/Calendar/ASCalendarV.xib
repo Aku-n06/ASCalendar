@@ -70,19 +70,10 @@
                 <constraint firstAttribute="bottom" secondItem="hoQ-fq-kQU" secondAttribute="bottom" id="zXB-pJ-8p8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bodyV" destination="RwU-oN-8Od" id="0Fz-6V-GjD"/>
+            </connections>
             <point key="canvasLocation" x="693" y="430"/>
         </view>
-        <viewController id="zC4-yO-iFx">
-            <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="yiM-G0-I5i"/>
-                <viewControllerLayoutGuide type="bottom" id="iMv-tB-J4L"/>
-            </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="GFE-0Z-nQG">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            </view>
-            <point key="canvasLocation" x="543" y="508"/>
-        </viewController>
     </objects>
 </document>

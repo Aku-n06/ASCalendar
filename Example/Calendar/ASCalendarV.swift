@@ -11,4 +11,15 @@ import UIKit
 
 class ASCalendarV: UIView {
     
+    @IBOutlet var bodyV : ASBodyV!
+    
+    var viewModel: ASCalendarVM! {
+        didSet {
+            viewModel.month.bindAndFire {
+                [unowned self] in
+                self.bodyV.showMonth($0)
+            }
+        }
+    }
+    
 }

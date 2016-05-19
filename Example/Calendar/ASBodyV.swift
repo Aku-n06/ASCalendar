@@ -19,6 +19,7 @@ UIScrollViewDelegate {
 
     @IBOutlet var collectionView : UICollectionView!
     var currentIndex = 100
+    var month : ASMonthM?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +40,14 @@ UIScrollViewDelegate {
         self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.registerNib(UINib(nibName: "ASMonthCellV", bundle: nil), forCellWithReuseIdentifier: "Cell")
         self.collectionView.collectionViewLayout = collapsedLayout
+        self.collectionView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
+    }
+    
+    //MARK: public methods
+    
+    func showMonth(month : ASMonthM) {
+        self.month = month
+        self.reloadMiddleCell()
     }
     
     //MARK: collectionView dataSource
@@ -66,7 +75,9 @@ UIScrollViewDelegate {
         } else if (indexPath.row == 2) {
             self.currentIndex += 1
         }
-        
+        if (self.month != nil) {
+            cell.populate(self.month!)
+        }
         return cell
     }
     
@@ -87,8 +98,10 @@ UIScrollViewDelegate {
     //MARK: private methods
     
     internal func reloadMiddleCell() {
-        if let cell = self.collectionView.cellForItemAtIndexPath(middleIndexPath) as? ASMonthCellV {
-            
+        if (self.month != nil) {
+            let cell = self.collectionView.cellForItemAtIndexPath(middleIndexPath) as? ASMonthCellV
+            cell?.populate(self.month!)
         }
     }
+    
 }

@@ -25,9 +25,12 @@ class ASDayV : UIView {
     
     //MARK: public methods
     
-    func populate(dayNumber : NSNumber, selected : Bool) {
-        self.numberLabel.text = dayNumber.stringValue
-        bubbleView.hidden = !selected
+    func populate(dayNumber : Int, selected : Bool, enabled : Bool) {
+        self.hidden = !enabled
+        if (enabled == true) {
+            self.numberLabel.text = String(dayNumber)
+            bubbleView.hidden = !selected
+        }
     }
     
 }

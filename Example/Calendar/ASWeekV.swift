@@ -21,4 +21,16 @@ class ASWeekV : UIView {
         super.init(coder: aDecoder)
     }
     
+    //MARK: public methods
+    
+    func populate(week : ASWeekM) {
+        for i in 0..<7 {
+            let day = week.days[i]
+            boxesV[i].view.populate(
+                day.dayNumber,
+                selected: day.daySelected,
+                enabled: day.dayEnabled
+            )
+        }
+    }
 }

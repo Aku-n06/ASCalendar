@@ -26,6 +26,11 @@
 		9CA2104B1CEDA7F4002061C3 /* ASDayV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2104A1CEDA7F4002061C3 /* ASDayV.swift */; };
 		9CA210511CEDABBB002061C3 /* ASWeekV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210501CEDABBB002061C3 /* ASWeekV.swift */; };
 		9CA210531CEDABEE002061C3 /* ASWeekBoxV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210521CEDABEE002061C3 /* ASWeekBoxV.swift */; };
+		9CA2105A1CEDB1C4002061C3 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210591CEDB1C4002061C3 /* Dynamic.swift */; };
+		9CA2105C1CEDB20D002061C3 /* ASCalendarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2105B1CEDB20D002061C3 /* ASCalendarVM.swift */; };
+		9CA2105E1CEDB42F002061C3 /* ASMonthM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2105D1CEDB42E002061C3 /* ASMonthM.swift */; };
+		9CA210611CEDB4B0002061C3 /* ASWeekM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210601CEDB4B0002061C3 /* ASWeekM.swift */; };
+		9CA210631CEDB58D002061C3 /* ASDayM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210621CEDB58D002061C3 /* ASDayM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		9CA2104A1CEDA7F4002061C3 /* ASDayV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASDayV.swift; path = Calendar/ASDayV.swift; sourceTree = "<group>"; };
 		9CA210501CEDABBB002061C3 /* ASWeekV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWeekV.swift; path = Calendar/ASWeekV.swift; sourceTree = "<group>"; };
 		9CA210521CEDABEE002061C3 /* ASWeekBoxV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWeekBoxV.swift; path = Calendar/ASWeekBoxV.swift; sourceTree = "<group>"; };
+		9CA210591CEDB1C4002061C3 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dynamic.swift; path = Calendar/Dynamic.swift; sourceTree = "<group>"; };
+		9CA2105B1CEDB20D002061C3 /* ASCalendarVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendarVM.swift; path = Calendar/ASCalendarVM.swift; sourceTree = "<group>"; };
+		9CA2105D1CEDB42E002061C3 /* ASMonthM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASMonthM.swift; path = Calendar/ASMonthM.swift; sourceTree = "<group>"; };
+		9CA210601CEDB4B0002061C3 /* ASWeekM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWeekM.swift; path = Calendar/ASWeekM.swift; sourceTree = "<group>"; };
+		9CA210621CEDB58D002061C3 /* ASDayM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASDayM.swift; path = Calendar/ASDayM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,13 +108,15 @@
 			children = (
 				9CA2102D1CECA11B002061C3 /* ASCalendar.swift */,
 				9CA2102F1CECA155002061C3 /* ASCustomPopover.swift */,
-				9CA210381CECB391002061C3 /* View */,
 				9CA210321CECA37D002061C3 /* ASCustomLayer.swift */,
+				9CA210381CECB391002061C3 /* UI */,
+				9CA210561CEDB14C002061C3 /* VM */,
+				9CA2105F1CEDB494002061C3 /* M */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
 		};
-		9CA210381CECB391002061C3 /* View */ = {
+		9CA210381CECB391002061C3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				9CA210341CECA4B2002061C3 /* ASCalendarV.xib */,
@@ -112,7 +124,7 @@
 				9CA210391CECB4C1002061C3 /* ASBodyV.swift */,
 				9CA210451CEDA6D5002061C3 /* body cell */,
 			);
-			name = View;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		9CA210451CEDA6D5002061C3 /* body cell */ = {
@@ -144,6 +156,25 @@
 				9CA210481CEDA7E5002061C3 /* ASDayV.xib */,
 			);
 			name = "day (box)";
+			sourceTree = "<group>";
+		};
+		9CA210561CEDB14C002061C3 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				9CA210591CEDB1C4002061C3 /* Dynamic.swift */,
+				9CA2105B1CEDB20D002061C3 /* ASCalendarVM.swift */,
+			);
+			name = VM;
+			sourceTree = "<group>";
+		};
+		9CA2105F1CEDB494002061C3 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				9CA2105D1CEDB42E002061C3 /* ASMonthM.swift */,
+				9CA210601CEDB4B0002061C3 /* ASWeekM.swift */,
+				9CA210621CEDB58D002061C3 /* ASDayM.swift */,
+			);
+			name = M;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,9 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA2105A1CEDB1C4002061C3 /* Dynamic.swift in Sources */,
 				9CA2101E1CEC9E93002061C3 /* ViewController.swift in Sources */,
 				9CA2104B1CEDA7F4002061C3 /* ASDayV.swift in Sources */,
 				9CA210331CECA37D002061C3 /* ASCustomLayer.swift in Sources */,
+				9CA2105E1CEDB42F002061C3 /* ASMonthM.swift in Sources */,
+				9CA210611CEDB4B0002061C3 /* ASWeekM.swift in Sources */,
+				9CA2105C1CEDB20D002061C3 /* ASCalendarVM.swift in Sources */,
 				9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */,
 				9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */,
 				9CA210511CEDABBB002061C3 /* ASWeekV.swift in Sources */,
@@ -232,6 +267,7 @@
 				9CA210401CECBA52002061C3 /* ASMonthCellV.swift in Sources */,
 				9CA2102E1CECA11B002061C3 /* ASCalendar.swift in Sources */,
 				9CA210531CEDABEE002061C3 /* ASWeekBoxV.swift in Sources */,
+				9CA210631CEDB58D002061C3 /* ASDayM.swift in Sources */,
 				9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

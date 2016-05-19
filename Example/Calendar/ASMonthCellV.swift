@@ -21,4 +21,19 @@ class ASMonthCellV: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
+    //MARK: public methods
+    
+    func populate(month : ASMonthM) {
+        for i in 0..<rowsV.count {
+            print(i)
+            //show or hide week
+            rowsV[i].hidden = false
+            if (i >= month.weeks.count) {
+                rowsV[i].hidden = true
+            } else {
+                rowsV[i].view.populate(month.weeks[i])
+            }
+        }
+    }
+    
 }

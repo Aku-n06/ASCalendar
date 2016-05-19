@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         let calendar = ASCalendar()
         calendar.showCalendarAsLayer()
-        
+        calendar.goToPage(5, year: 2016)
     }
 }
 

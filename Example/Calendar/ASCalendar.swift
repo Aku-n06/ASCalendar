@@ -10,6 +10,8 @@ import Foundation
 
 class ASCalendar: NSObject {
     
+    var calendarV : ASCalendarV!
+    var calendarVM : ASCalendarVM!
     override init() {
         super.init()
     }
@@ -19,6 +21,12 @@ class ASCalendar: NSObject {
     func showCalendarAsLayer() {
         let calendarLayer = ASCustomLayer()
         calendarLayer.showCalendar()
+        self.calendarV = calendarLayer.calendar as! ASCalendarV
+    }
+    
+    func goToPage(month: Int, year: Int) {
+        self.calendarVM = ASCalendarVM(month: ASMonthM(month: month, year: year))
+        self.calendarV.viewModel = self.calendarVM
     }
     
 }

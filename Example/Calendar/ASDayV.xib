@@ -44,6 +44,10 @@
                     <exclude reference="wat-fw-ed2"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="bubbleView" destination="JMk-tt-QVC" id="V8H-wS-oo0"/>
+                <outlet property="numberLabel" destination="JWO-lO-3xd" id="gFV-4n-JTS"/>
+            </connections>
             <point key="canvasLocation" x="318.5" y="292.5"/>
         </view>
     </objects>
