@@ -12,10 +12,15 @@ class ASMonthCellV: UICollectionViewCell {
     
     @IBOutlet var rowsV : Array<ASMonthRowV>!
     @IBOutlet var rowsHeights : Array<NSLayoutConstraint>!
+    @IBOutlet var monthLabel : UILabel!
+    var monthNames : Array<String>!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor.redColor()
+        //get month names
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.currentLocale()
+        self.monthNames = formatter.monthSymbols
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,6 +30,7 @@ class ASMonthCellV: UICollectionViewCell {
     //MARK: public methods
     
     func populate(month : ASMonthM) {
+        self.monthLabel.text = monthNames[month.month-1].uppercaseString
         for i in 0..<rowsV.count {
             //show or hide week
             rowsV[i].hidden = false

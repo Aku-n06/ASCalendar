@@ -18,12 +18,22 @@ UICollectionViewDelegate,
 UIScrollViewDelegate {
 
     @IBOutlet var collectionView : UICollectionView!
+    @IBOutlet var dayLabel : Array<UILabel>!
     var currentIndex = 100
     var currentMonth : Int?
     var currentYear : Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //get day names
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.currentLocale()
+        let weekdays = formatter.weekdaySymbols
+        for i in 0...5 {
+            dayLabel[i].text = String(weekdays[i+1].characters.first!).uppercaseString
+        }
+        //move sunday at the end of the week
+        dayLabel[6].text = String(weekdays[0].characters.first!).uppercaseString
     }
     
     override func layoutSubviews() {
@@ -37,8 +47,6 @@ UIScrollViewDelegate {
         self.collectionView.pagingEnabled = true
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        self.collectionView.showsVerticalScrollIndicator = false
-        self.collectionView.showsVerticalScrollIndicator = false
         self.collectionView.registerNib(UINib(nibName: "ASMonthCellV", bundle: nil), forCellWithReuseIdentifier: "Cell")
         self.collectionView.collectionViewLayout = collapsedLayout
         self.collectionView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)

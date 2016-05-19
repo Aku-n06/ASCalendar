@@ -11,13 +11,25 @@ import UIKit
 
 class ASCalendarV: UIView {
     
-    @IBOutlet var bodyV : ASBodyV!
+    @IBOutlet var bodyV : ASBodyContainerV!
+    @IBOutlet var leftBarWidth : NSLayoutConstraint!
+    @IBOutlet var rightBarWidth : NSLayoutConstraint!
+    @IBOutlet var headerLabel : UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //hide lateral bars
+        self.leftBarWidth.constant = 0
+        self.rightBarWidth.constant = 0
+        //show current month - year
+        self.headerLabel.text = "CALENDAR"
+    }
     
     var viewModel: ASCalendarVM! {
         didSet {
             viewModel.selectedMonth.bindAndFire {
                 [unowned self] in
-                self.bodyV.showMonth($0.month, year: $0.year)
+                self.bodyV.view.showMonth($0.month, year: $0.year)
             }
         }
     }
