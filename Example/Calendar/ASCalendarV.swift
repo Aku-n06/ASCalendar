@@ -11,6 +11,4 @@ import UIKit
 
 class ASCalendarV: UIView {
     
-    
-
 }

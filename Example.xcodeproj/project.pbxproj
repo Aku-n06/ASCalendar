@@ -20,6 +20,12 @@
 		9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210391CECB4C1002061C3 /* ASBodyV.swift */; };
 		9CA210401CECBA52002061C3 /* ASMonthCellV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2103F1CECBA52002061C3 /* ASMonthCellV.swift */; };
 		9CA210421CECBE7D002061C3 /* ASMonthCellV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210411CECBE7D002061C3 /* ASMonthCellV.xib */; };
+		9CA210441CEDA6CA002061C3 /* ASMonthRowV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210431CEDA6CA002061C3 /* ASMonthRowV.swift */; };
+		9CA210471CEDA705002061C3 /* ASWeekV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210461CEDA705002061C3 /* ASWeekV.xib */; };
+		9CA210491CEDA7E5002061C3 /* ASDayV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210481CEDA7E5002061C3 /* ASDayV.xib */; };
+		9CA2104B1CEDA7F4002061C3 /* ASDayV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2104A1CEDA7F4002061C3 /* ASDayV.swift */; };
+		9CA210511CEDABBB002061C3 /* ASWeekV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210501CEDABBB002061C3 /* ASWeekV.swift */; };
+		9CA210531CEDABEE002061C3 /* ASWeekBoxV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210521CEDABEE002061C3 /* ASWeekBoxV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		9CA210391CECB4C1002061C3 /* ASBodyV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASBodyV.swift; path = Calendar/ASBodyV.swift; sourceTree = "<group>"; };
 		9CA2103F1CECBA52002061C3 /* ASMonthCellV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASMonthCellV.swift; path = Calendar/ASMonthCellV.swift; sourceTree = "<group>"; };
 		9CA210411CECBE7D002061C3 /* ASMonthCellV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ASMonthCellV.xib; path = Calendar/ASMonthCellV.xib; sourceTree = "<group>"; };
+		9CA210431CEDA6CA002061C3 /* ASMonthRowV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASMonthRowV.swift; path = Calendar/ASMonthRowV.swift; sourceTree = "<group>"; };
+		9CA210461CEDA705002061C3 /* ASWeekV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ASWeekV.xib; path = Calendar/ASWeekV.xib; sourceTree = "<group>"; };
+		9CA210481CEDA7E5002061C3 /* ASDayV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ASDayV.xib; path = Calendar/ASDayV.xib; sourceTree = "<group>"; };
+		9CA2104A1CEDA7F4002061C3 /* ASDayV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASDayV.swift; path = Calendar/ASDayV.swift; sourceTree = "<group>"; };
+		9CA210501CEDABBB002061C3 /* ASWeekV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWeekV.swift; path = Calendar/ASWeekV.swift; sourceTree = "<group>"; };
+		9CA210521CEDABEE002061C3 /* ASWeekBoxV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWeekBoxV.swift; path = Calendar/ASWeekBoxV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +110,40 @@
 				9CA210341CECA4B2002061C3 /* ASCalendarV.xib */,
 				9CA210361CECA4C3002061C3 /* ASCalendarV.swift */,
 				9CA210391CECB4C1002061C3 /* ASBodyV.swift */,
-				9CA2103F1CECBA52002061C3 /* ASMonthCellV.swift */,
-				9CA210411CECBE7D002061C3 /* ASMonthCellV.xib */,
+				9CA210451CEDA6D5002061C3 /* body cell */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		9CA210451CEDA6D5002061C3 /* body cell */ = {
+			isa = PBXGroup;
+			children = (
+				9CA2103F1CECBA52002061C3 /* ASMonthCellV.swift */,
+				9CA210411CECBE7D002061C3 /* ASMonthCellV.xib */,
+				9CA210541CEDAC71002061C3 /* week (row) */,
+			);
+			name = "body cell";
+			sourceTree = "<group>";
+		};
+		9CA210541CEDAC71002061C3 /* week (row) */ = {
+			isa = PBXGroup;
+			children = (
+				9CA210431CEDA6CA002061C3 /* ASMonthRowV.swift */,
+				9CA210501CEDABBB002061C3 /* ASWeekV.swift */,
+				9CA210461CEDA705002061C3 /* ASWeekV.xib */,
+				9CA210551CEDAC7D002061C3 /* day (box) */,
+			);
+			name = "week (row)";
+			sourceTree = "<group>";
+		};
+		9CA210551CEDAC7D002061C3 /* day (box) */ = {
+			isa = PBXGroup;
+			children = (
+				9CA210521CEDABEE002061C3 /* ASWeekBoxV.swift */,
+				9CA2104A1CEDA7F4002061C3 /* ASDayV.swift */,
+				9CA210481CEDA7E5002061C3 /* ASDayV.xib */,
+			);
+			name = "day (box)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,10 +204,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CA210471CEDA705002061C3 /* ASWeekV.xib in Resources */,
 				9CA210421CECBE7D002061C3 /* ASMonthCellV.xib in Resources */,
 				9CA210351CECA4B2002061C3 /* ASCalendarV.xib in Resources */,
 				9CA210261CEC9E93002061C3 /* LaunchScreen.storyboard in Resources */,
 				9CA210231CEC9E93002061C3 /* Assets.xcassets in Resources */,
+				9CA210491CEDA7E5002061C3 /* ASDayV.xib in Resources */,
 				9CA210211CEC9E93002061C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,12 +222,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA2101E1CEC9E93002061C3 /* ViewController.swift in Sources */,
+				9CA2104B1CEDA7F4002061C3 /* ASDayV.swift in Sources */,
 				9CA210331CECA37D002061C3 /* ASCustomLayer.swift in Sources */,
 				9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */,
 				9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */,
+				9CA210511CEDABBB002061C3 /* ASWeekV.swift in Sources */,
+				9CA210441CEDA6CA002061C3 /* ASMonthRowV.swift in Sources */,
 				9CA210301CECA155002061C3 /* ASCustomPopover.swift in Sources */,
 				9CA210401CECBA52002061C3 /* ASMonthCellV.swift in Sources */,
 				9CA2102E1CECA11B002061C3 /* ASCalendar.swift in Sources */,
+				9CA210531CEDABEE002061C3 /* ASWeekBoxV.swift in Sources */,
 				9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

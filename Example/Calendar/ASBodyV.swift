@@ -67,7 +67,6 @@ UIScrollViewDelegate {
             self.currentIndex += 1
         }
         
-        (cell.viewWithTag(9) as! UILabel).text = String(self.currentIndex)
         return cell
     }
     
@@ -88,7 +87,8 @@ UIScrollViewDelegate {
     //MARK: private methods
     
     internal func reloadMiddleCell() {
-        let cell = self.collectionView.cellForItemAtIndexPath(middleIndexPath) as! ASMonthCellV
-        (cell.viewWithTag(9) as! UILabel).text = String(self.currentIndex)
+        if let cell = self.collectionView.cellForItemAtIndexPath(middleIndexPath) as? ASMonthCellV {
+            
+        }
     }
 }

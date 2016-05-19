@@ -1,20 +1,20 @@
 //
-//  ASMonthCellV.swift
+//  ASWeekV.swift
 //  Example
 //
-//  Created by alberto.scampini on 18/05/2016.
+//  Created by alberto.scampini on 19/05/2016.
 //  Copyright © 2016 Alberto Scampini. All rights reserved.
 //
 
+
 import UIKit
 
-class ASMonthCellV: UICollectionViewCell {
+class ASWeekV : UIView {
     
-    @IBOutlet var rowsV : Array<ASMonthRowV>!
+    @IBOutlet var boxesV : Array<ASWeekBoxV>!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = UIColor.redColor()
     }
     
     required init?(coder aDecoder: NSCoder) {

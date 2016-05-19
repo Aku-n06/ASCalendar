@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ASDayV" customModule="Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="263" height="263"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMk-tt-QVC">
+                    <rect key="frame" x="53" y="2" width="158" height="158"/>
+                    <color key="backgroundColor" red="0.93262374161073824" green="0.25718259961443346" blue="0.087413074691931353" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="JMk-tt-QVC" secondAttribute="height" id="dWr-IM-cCD"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-lO-3xd">
+                    <rect key="frame" x="0.0" y="0.0" width="263" height="158"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JMk-tt-QVC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FIN-ty-EXw"/>
+                <constraint firstAttribute="trailing" secondItem="JWO-lO-3xd" secondAttribute="trailing" id="NbJ-ch-1gr"/>
+                <constraint firstItem="JMk-tt-QVC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="UR6-gJ-JZy"/>
+                <constraint firstItem="JMk-tt-QVC" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="dc1-Hf-OYD"/>
+                <constraint firstItem="JWO-lO-3xd" firstAttribute="height" secondItem="JMk-tt-QVC" secondAttribute="height" id="kpg-rq-SOq"/>
+                <constraint firstItem="JWO-lO-3xd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pUC-NF-9sd"/>
+                <constraint firstItem="JMk-tt-QVC" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.6" constant="-2" id="wat-fw-ed2"/>
+                <constraint firstItem="JWO-lO-3xd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zd8-Ra-tIp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="wat-fw-ed2"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="318.5" y="292.5"/>
+        </view>
+    </objects>
+</document>
