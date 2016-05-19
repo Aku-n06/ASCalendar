@@ -33,6 +33,8 @@
 		9CA210631CEDB58D002061C3 /* ASDayM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210621CEDB58D002061C3 /* ASDayM.swift */; };
 		9CA210651CEE00E3002061C3 /* ASBodyV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CA210641CEE00E3002061C3 /* ASBodyV.xib */; };
 		9CA210671CEE011D002061C3 /* ASBodyContainerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210661CEE011D002061C3 /* ASBodyContainerV.swift */; };
+		9CA2106A1CEE0E14002061C3 /* ASBodyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210691CEE0E14002061C3 /* ASBodyVM.swift */; };
+		9CA2106C1CEE10E1002061C3 /* ASCalendarNamesM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		9CA210621CEDB58D002061C3 /* ASDayM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASDayM.swift; path = Calendar/ASDayM.swift; sourceTree = "<group>"; };
 		9CA210641CEE00E3002061C3 /* ASBodyV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ASBodyV.xib; path = Calendar/ASBodyV.xib; sourceTree = "<group>"; };
 		9CA210661CEE011D002061C3 /* ASBodyContainerV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASBodyContainerV.swift; path = Calendar/ASBodyContainerV.swift; sourceTree = "<group>"; };
+		9CA210691CEE0E14002061C3 /* ASBodyVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASBodyVM.swift; path = Calendar/ASBodyVM.swift; sourceTree = "<group>"; };
+		9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendarNamesM.swift; path = Calendar/ASCalendarNamesM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 			children = (
 				9CA210591CEDB1C4002061C3 /* Dynamic.swift */,
 				9CA2105B1CEDB20D002061C3 /* ASCalendarVM.swift */,
+				9CA210691CEE0E14002061C3 /* ASBodyVM.swift */,
 			);
 			name = VM;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA2105D1CEDB42E002061C3 /* ASMonthM.swift */,
+				9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */,
 				9CA210601CEDB4B0002061C3 /* ASWeekM.swift */,
 				9CA210621CEDB58D002061C3 /* ASDayM.swift */,
 			);
@@ -268,12 +274,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA210671CEE011D002061C3 /* ASBodyContainerV.swift in Sources */,
+				9CA2106A1CEE0E14002061C3 /* ASBodyVM.swift in Sources */,
 				9CA2105A1CEDB1C4002061C3 /* Dynamic.swift in Sources */,
 				9CA2101E1CEC9E93002061C3 /* ViewController.swift in Sources */,
 				9CA2104B1CEDA7F4002061C3 /* ASDayV.swift in Sources */,
 				9CA210331CECA37D002061C3 /* ASCustomLayer.swift in Sources */,
 				9CA2105E1CEDB42F002061C3 /* ASMonthM.swift in Sources */,
 				9CA210611CEDB4B0002061C3 /* ASWeekM.swift in Sources */,
+				9CA2106C1CEE10E1002061C3 /* ASCalendarNamesM.swift in Sources */,
 				9CA2105C1CEDB20D002061C3 /* ASCalendarVM.swift in Sources */,
 				9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */,
 				9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */,

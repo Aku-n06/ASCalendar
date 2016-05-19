@@ -15,25 +15,25 @@ class ASBodyV:
 UIView,
 UICollectionViewDataSource,
 UICollectionViewDelegate,
-UIScrollViewDelegate {
+UIScrollViewDelegate,
+ASCalendarNamesM {
 
     @IBOutlet var collectionView : UICollectionView!
     @IBOutlet var dayLabel : Array<UILabel>!
     var currentIndex = 100
-    var currentMonth : Int?
-    var currentYear : Int?
+    
+    var viewModel: ASBodyVM? {
+        didSet {
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //get day names
-        let formatter = NSDateFormatter()
-        formatter.locale = NSLocale.currentLocale()
-        let weekdays = formatter.weekdaySymbols
-        for i in 0...5 {
-            dayLabel[i].text = String(weekdays[i+1].characters.first!).uppercaseString
+        //show day names label
+        let weekNames = self.getWeekNames()
+        for i in 0...6 {
+            self.dayLabel[i].text = weekNames[i]
         }
-        //move sunday at the end of the week
-        dayLabel[6].text = String(weekdays[0].characters.first!).uppercaseString
     }
     
     override func layoutSubviews() {
@@ -55,14 +55,16 @@ UIScrollViewDelegate {
         self.collectionView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
     }
     
+    
     //MARK: public methods
     
     func showMonth(month : Int, year : Int) {
-        if (self.currentMonth != month && self.currentYear != year) {
-            self.currentMonth = month
-            self.currentYear = year
-            self.reloadCell(middleIndexPath)
+        if (self.viewModel == nil) {
+            self.viewModel = ASBodyVM(month: month, year: year)
+        } else {
+            self.viewModel?.selectedMonth.value = (month : month, year : year)
         }
+        self.reloadCell(middleIndexPath)
     }
     
     //MARK: collectionView dataSource
@@ -84,8 +86,8 @@ UIScrollViewDelegate {
             "Cell",
             forIndexPath: indexPath
         ) as! ASMonthCellV
-        if (self.currentMonth != nil) {
-            let offset = calculateMonthOffset(indexPath.row)
+        if (self.viewModel != nil) {
+            let offset = self.viewModel!.calculateMonthOffset(indexPath.row)
             let month = ASMonthM(month: offset.month, year: offset.year)
             cell.populate(month)
         }
@@ -100,12 +102,12 @@ UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if (scrollView.contentOffset.y <= 0) {
-            self.switchMonth(false)
+            self.viewModel?.switchMonth(false)
             self.reloadCell(previusIndexPath)
             self.reloadCell(middleIndexPath)
             scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         } else if (scrollView.contentOffset.y >= self.frame.height * 2) {
-            self.switchMonth(true)
+            self.viewModel?.switchMonth(true)
             self.reloadCell(nextIndexPath)
             self.reloadCell(middleIndexPath)
             scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
@@ -115,48 +117,12 @@ UIScrollViewDelegate {
     //MARK: private methods
     
     internal func reloadCell(indexPath : NSIndexPath) {
-        if (self.currentMonth != nil) {
+        if (self.viewModel != nil) {
             let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as? ASMonthCellV
-            let offset = calculateMonthOffset(indexPath.row)
+            let offset = self.viewModel!.calculateMonthOffset(indexPath.row)
             let month = ASMonthM(month: offset.month, year: offset.year)
             cell?.populate(month)
         }
-    }
-    
-    internal func switchMonth(increment : Bool) {
-        if (self.currentMonth != nil) {
-            if (increment == false) {
-                //previus month
-                self.currentMonth! -= 1
-                if (self.currentMonth == 0) {
-                    self.currentMonth = 12
-                    self.currentYear! -= 1
-                }
-            } else if (increment == true) {
-                //next month
-                self.currentMonth! += 1
-                if (self.currentMonth == 13) {
-                    self.currentMonth = 1
-                    self.currentYear! += 1
-                }
-            }
-        }
-    }
-    
-    internal func calculateMonthOffset(row : Int) -> (month: Int, year: Int) {
-        var monthOffset = self.currentMonth!
-        var yearOffset = self.currentYear!
-        let offset = row - 1
-        monthOffset = monthOffset + offset
-        if (monthOffset == 13) {
-            monthOffset = 1
-            yearOffset += 1
-        }
-        else if (monthOffset == 0) {
-            monthOffset = 12
-            yearOffset -= 1
-        }
-        return (month: monthOffset, year: yearOffset)
     }
     
 }
