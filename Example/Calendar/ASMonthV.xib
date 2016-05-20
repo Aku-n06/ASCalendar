@@ -12,54 +12,55 @@
             <subviews>
                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRG-MK-vJ7" customClass="ASMonthRowV" customModule="Example" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="30" width="421" height="66"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="wXT-yw-808"/>
                     </constraints>
                 </view>
                 <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-DO-o5U" customClass="ASMonthRowV" customModule="Example" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="96" width="421" height="67"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="aoE-fU-dfQ"/>
                     </constraints>
                 </view>
                 <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1lg-BQ-V5B" customClass="ASMonthRowV" customModule="Example" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="163" width="421" height="66"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="T0q-ao-1fV"/>
                     </constraints>
                 </view>
                 <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZJ-RM-WSp" customClass="ASMonthRowV" customModule="Example" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="229" width="421" height="66"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="iY0-15-oG5"/>
                     </constraints>
                 </view>
                 <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcS-Y7-LIs" customClass="ASMonthRowV" customModule="Example" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="295" width="421" height="67"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="PvT-ra-2Gr"/>
                     </constraints>
                 </view>
                 <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzL-V4-pQ8" customClass="ASMonthRowV" customModule="Example" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="362" width="421" height="66"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="0cJ-yr-Cvv"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-JZ-Z8c">
                     <rect key="frame" x="371" y="4" width="46" height="22"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="0.93262374159999994" green="0.25718259960000001" blue="0.087413074689999995" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="YZJ-RM-WSp" firstAttribute="height" secondItem="1lg-BQ-V5B" secondAttribute="height" priority="750" id="1la-iO-nRG"/>
                 <constraint firstAttribute="trailing" secondItem="fcS-Y7-LIs" secondAttribute="trailing" id="9na-Oh-N5b"/>

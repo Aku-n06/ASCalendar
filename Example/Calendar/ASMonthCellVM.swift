@@ -17,17 +17,15 @@ class ASMonthVM : NSObject {
         super.init()
         self.settingsM = settings
         self.monthM = Dynamic(monthM)
-        self.settingsM.selectedDay.bindAndFire {
-            [unowned self] in
-            if ($0.month == self.monthM.value.month && $0.year == self.monthM.value.year) {
-                print("this")
-            }
-        }
     }
     
     //MARK: public Methods
     
-    func getWeekModel(week : ASWeekM) -> ASWeekVM{
+    func getWeekModel(week : ASWeekM, currentViewModel : ASWeekVM?) -> ASWeekVM?{
+        if (currentViewModel != nil) {
+            currentViewModel!.weekM.value = week
+            return nil
+        }
         return ASWeekVM(settings: self.settingsM, weekM: week)
     }
     

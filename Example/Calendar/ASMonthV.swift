@@ -27,10 +27,15 @@ class ASMonthV: UIView, ASCalendarNamesM {
                         self.rowsV[i].hidden = true
                         self.rowsHeights[i].constant = 0
                     } else {
-                        self.rowsV[i].view.viewModel = self.viewModel.getWeekModel($0.weeks[i])
+                        if (self.rowsV[i].view.viewModel == nil) {
+                            self.rowsV[i].view.viewModel = self.viewModel.getWeekModel($0.weeks[i], currentViewModel: nil)
+                        } else {
+                            self.viewModel.getWeekModel($0.weeks[i], currentViewModel: self.rowsV[i].view.viewModel)
+                        }
                     }
                 }
             }
+            
         }
     }
     

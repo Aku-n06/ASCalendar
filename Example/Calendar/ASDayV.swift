@@ -11,7 +11,7 @@ import UIKit
 class ASDayV : UIView {
     
     @IBOutlet var numberLabel : UILabel!
-    @IBOutlet var bubbleView : UIView!
+    @IBOutlet var selectionV : UIView!
     var viewModel : ASDayVM! {
         didSet {
             self.viewModel.dayM.bindAndFire {
@@ -19,7 +19,7 @@ class ASDayV : UIView {
                 self.hidden = !$0.dayEnabled
                 if ($0.dayEnabled == true) {
                     self.numberLabel.text = String($0.dayNumber)
-                    self.bubbleView.hidden = !$0.daySelected
+                    self.selectionV.hidden = !$0.daySelected
                 }
             }
         }
@@ -34,6 +34,11 @@ class ASDayV : UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
     }
     
     //MARK: user interaction

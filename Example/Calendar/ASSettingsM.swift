@@ -10,18 +10,19 @@ import Foundation
 
 enum BodySelectionStyle {
     case Week
+    case Day
 }
 
 class ASSettingsM : NSObject {
     
     var selectionStyle : Dynamic<BodySelectionStyle>!
     var selectedMonth : Dynamic<(month : Int, year: Int)>!
-    var selectedDay : Dynamic<(day : Int, month: Int, year: Int)>!
+    var selectedDay : Dynamic<ASDayM>!
     
     init(month : Int, year : Int) {
         super.init()
         self.selectedMonth = Dynamic((month : month, year: year))
         self.selectionStyle = Dynamic(.Week)
-        self.selectedDay = Dynamic(day : 0, month: 0, year: 0)
+        self.selectedDay = Dynamic(ASDayM())//no selection
     }
 }

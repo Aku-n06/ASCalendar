@@ -19,6 +19,7 @@ struct ASMonthM {
         self.year = year
         //create a nsdate
         let calendar = NSCalendar.currentCalendar()
+        calendar.minimumDaysInFirstWeek = 1
         let components = NSDateComponents()
         components.year = year
         components.month = month
@@ -28,7 +29,8 @@ struct ASMonthM {
         let range = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: date!)
         let daysCount = range.length
         //find first day weekday
-        let myComponents = calendar.components(.Weekday, fromDate: date!)
+        let myComponents = calendar.components([.Weekday, .WeekOfYear], fromDate: date!)
+        let weekNumber = myComponents.weekOfYear
         var weekDay = myComponents.weekday
         if weekDay == 1 {// switch to start by monday
             weekDay = 7
@@ -38,10 +40,15 @@ struct ASMonthM {
         //create weeks
         var allWeeks = Array<ASWeekM>()
         var currentWeek = ASWeekM()
+        currentWeek.weekMonth = month
+        currentWeek.weekYear = year
         for i in 1...daysCount {
             //create day
             var currentDay = currentWeek.days[weekDay-1]
             currentDay.dayNumber = i
+            currentDay.dayMonth = month
+            currentDay.dayYear = year
+            currentDay.dayWeek = weekNumber
             currentDay.dayEnabled = true
             currentWeek.days[weekDay-1] = currentDay
             //next day
@@ -50,6 +57,8 @@ struct ASMonthM {
                 weekDay = 1
                 allWeeks.append(currentWeek)
                 currentWeek = ASWeekM()
+                currentWeek.weekMonth = month
+                currentWeek.weekYear = year
             }
         }
         if (weekDay > 1) {

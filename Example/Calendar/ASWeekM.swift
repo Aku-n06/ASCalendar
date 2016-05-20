@@ -11,6 +11,8 @@ import Foundation
 struct ASWeekM {
     
     var weekNumber : Int!
+    var weekYear : Int!
+    var weekMonth : Int!
     var days : Array<ASDayM>!
     
     init() {

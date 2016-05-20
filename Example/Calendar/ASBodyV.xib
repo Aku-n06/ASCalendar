@@ -12,6 +12,10 @@
             <rect key="frame" x="0.0" y="0.0" width="258" height="189"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-vH-opl">
+                    <rect key="frame" x="184" y="30" width="74" height="159"/>
+                    <color key="backgroundColor" red="0.96135542392901163" green="0.96821001864483569" blue="0.98877380279230775" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG9-w6-q1p">
                     <rect key="frame" x="0.0" y="0.0" width="258" height="189"/>
                     <subviews>
@@ -20,18 +24,18 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-zv-qNk" userLabel="previusMonthV" customClass="ASMonthBoxV" customModule="Example" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="258" height="189"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNK-VT-Y1T" userLabel="currentMonthV" customClass="ASMonthBoxV" customModule="Example" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="189" width="258" height="189"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulr-on-Lds" userLabel="nextMonthV" customClass="ASMonthBoxV" customModule="Example" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="378" width="258" height="189"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="CH6-zv-qNk" firstAttribute="top" secondItem="BZh-KW-BxN" secondAttribute="top" id="0WI-Gj-tf8"/>
                                 <constraint firstAttribute="trailing" secondItem="CH6-zv-qNk" secondAttribute="trailing" id="2jI-6z-8eL"/>
@@ -47,6 +51,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="BZh-KW-BxN" firstAttribute="top" secondItem="fG9-w6-q1p" secondAttribute="top" id="9z8-5r-0kI"/>
                         <constraint firstItem="BZh-KW-BxN" firstAttribute="leading" secondItem="fG9-w6-q1p" secondAttribute="leading" id="OUR-Cd-L8D"/>
@@ -140,18 +145,22 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="fG9-w6-q1p" secondAttribute="bottom" id="07g-Gw-7Xl"/>
                 <constraint firstItem="fG9-w6-q1p" firstAttribute="top" secondItem="O45-sK-cV2" secondAttribute="top" id="0KC-jh-M5S"/>
                 <constraint firstAttribute="trailing" secondItem="cI2-25-i31" secondAttribute="trailing" id="1NW-KU-Fca"/>
+                <constraint firstAttribute="bottom" secondItem="1Av-vH-opl" secondAttribute="bottom" id="4Qs-iV-aeS"/>
                 <constraint firstItem="BZh-KW-BxN" firstAttribute="height" secondItem="O45-sK-cV2" secondAttribute="height" multiplier="3" id="5L6-6Y-kiM"/>
+                <constraint firstAttribute="trailing" secondItem="1Av-vH-opl" secondAttribute="trailing" id="AuX-Oz-ULJ"/>
                 <constraint firstItem="BZh-KW-BxN" firstAttribute="width" secondItem="O45-sK-cV2" secondAttribute="width" id="CPD-D3-CCv"/>
+                <constraint firstItem="1Av-vH-opl" firstAttribute="width" secondItem="l4T-w2-8Ee" secondAttribute="width" multiplier="2" id="PHx-lo-ihB"/>
                 <constraint firstItem="cI2-25-i31" firstAttribute="top" secondItem="O45-sK-cV2" secondAttribute="top" id="elV-Bg-0uU"/>
                 <constraint firstAttribute="trailing" secondItem="fG9-w6-q1p" secondAttribute="trailing" id="kIG-nK-yuj"/>
                 <constraint firstItem="fG9-w6-q1p" firstAttribute="leading" secondItem="O45-sK-cV2" secondAttribute="leading" id="mhC-XR-0uS"/>
                 <constraint firstItem="cI2-25-i31" firstAttribute="leading" secondItem="O45-sK-cV2" secondAttribute="leading" id="xTl-sO-65e"/>
                 <constraint firstItem="CH6-zv-qNk" firstAttribute="height" secondItem="O45-sK-cV2" secondAttribute="height" id="yaM-GP-KDu"/>
+                <constraint firstItem="1Av-vH-opl" firstAttribute="top" secondItem="cI2-25-i31" secondAttribute="bottom" id="zdk-gt-S4c"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -16,7 +16,6 @@ class ASDayVM: NSObject {
     init(settings: ASSettingsM, day: ASDayM) {
         self.settingsM = settings
         self.dayM = Dynamic(day)
-        self.touched = Dynamic(false)
         super.init()
     }
     
@@ -25,7 +24,7 @@ class ASDayVM: NSObject {
     var touched : Dynamic<Bool>!
     
     func selected() {
-        self.touched.value = !self.dayM.value.daySelected
+        self.settingsM.selectedDay.value = self.dayM.value
     }
     
 }

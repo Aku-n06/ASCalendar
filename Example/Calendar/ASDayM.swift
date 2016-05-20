@@ -10,6 +10,9 @@ import Foundation
 
 struct ASDayM {
     
+    var dayYear : Int!
+    var dayMonth : Int!
+    var dayWeek : Int!
     var dayNumber : Int!
     var daySelected : Bool!
     var dayEnabled : Bool!
@@ -18,5 +21,8 @@ struct ASDayM {
         dayNumber = 0
         daySelected = false
         dayEnabled = false
+        dayYear = 0
+        dayMonth = 0
+        dayWeek = 0
     }
 }

@@ -12,6 +12,7 @@ import UIKit
 class ASWeekV : UIView {
     
     @IBOutlet var boxesV : Array<ASWeekBoxV>!
+    @IBOutlet var selectionV : UIView!
     var viewModel : ASWeekVM! {
         didSet {
             self.viewModel.weekM.bindAndFire {
@@ -25,7 +26,20 @@ class ASWeekV : UIView {
                     }
                 }
             }
+            self.viewModel.selectedIndex.bindAndFire {
+                [unowned self] in
+                if ($0 == 99) {//select entire row
+                    self.selectionV.hidden = false
+                    return
+                }
+                self.selectionV.hidden = true
+            }
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
     }
     
     override func awakeFromNib() {
@@ -34,5 +48,11 @@ class ASWeekV : UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    //MARK: private methods
+    
+    internal func checkSelection() {
+        
     }
 }
