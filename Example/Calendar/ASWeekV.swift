@@ -29,7 +29,8 @@ class ASWeekV : UIView {
             boxesV[i].view.populate(
                 day.dayNumber,
                 selected: day.daySelected,
-                enabled: day.dayEnabled
+                enabled: day.dayEnabled,
+                highlighted: i > 4
             )
         }
     }

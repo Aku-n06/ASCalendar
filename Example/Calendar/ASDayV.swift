@@ -25,11 +25,16 @@ class ASDayV : UIView {
     
     //MARK: public methods
     
-    func populate(dayNumber : Int, selected : Bool, enabled : Bool) {
+    func populate(dayNumber : Int, selected : Bool, enabled : Bool, highlighted : Bool) {
         self.hidden = !enabled
         if (enabled == true) {
             self.numberLabel.text = String(dayNumber)
             bubbleView.hidden = !selected
+        }
+        if (highlighted == true) {
+            self.numberLabel.textColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
+        } else {
+            self.numberLabel.textColor = UIColor.blackColor()
         }
     }
     
