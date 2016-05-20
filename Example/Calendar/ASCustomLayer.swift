@@ -12,6 +12,7 @@ import UIKit
 class ASCustomLayer: UIView {
     
     var calendar : UIView!
+    var blackLayer : UIView!
     
     //MARK: initialisations
     
@@ -34,6 +35,12 @@ class ASCustomLayer: UIView {
     func showCalendar () {
         self.createLayer()
         self.presentationAnimations()
+    }
+    
+    //MARK: user interaction 
+    
+    func handleTap() {
+        self.closingAnimations()
     }
     
     //MARK: private methods
@@ -81,8 +88,55 @@ class ASCustomLayer: UIView {
             constant: 0
         )
         mainWindow.addConstraints([topConstraint,bottomConstraint,leftConstraint,rightConstraint])
+        //create black layer
+        self.blackLayer = UIView()
+        self.blackLayer.backgroundColor = UIColor.clearColor()
+        self.addSubview(blackLayer)
+        self.blackLayer.translatesAutoresizingMaskIntoConstraints = false
+        //set black layer layout
+        let topLayerConstraint = NSLayoutConstraint(
+            item: self.blackLayer,
+            attribute: .Top,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Top,
+            multiplier: 1,
+            constant: 0
+        )
+        let bottomLayerConstraint = NSLayoutConstraint(
+            item: self.blackLayer,
+            attribute: .Bottom,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Bottom,
+            multiplier: 1,
+            constant: 0
+        )
+        let leftLayerConstraint = NSLayoutConstraint(
+            item: self.blackLayer,
+            attribute: .Left,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Left,
+            multiplier: 1,
+            constant: 0
+        )
+        let rightLayerConstraint = NSLayoutConstraint(
+            item: self.blackLayer,
+            attribute: .Right,
+            relatedBy: .Equal,
+            toItem: self,
+            attribute: .Right,
+            multiplier: 1,
+            constant: 0
+        )
+        self.addConstraints([topLayerConstraint,bottomLayerConstraint,leftLayerConstraint,rightLayerConstraint])
+        //add tap gesture to layer
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        self.blackLayer.addGestureRecognizer(tapGesture)
         //load calendar view
         self.calendar = loadViewFromNib()
+        self.calendar.alpha = 0
         self.calendar.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.calendar)
         //set calendar view layout
@@ -95,14 +149,14 @@ class ASCustomLayer: UIView {
             multiplier: 1,
             constant: 0
         )
-        let centerYConstraint = NSLayoutConstraint(
+        self.centerYConstraint = NSLayoutConstraint(
             item: self.calendar,
             attribute: .CenterY,
             relatedBy: .Equal,
             toItem: self,
             attribute: .CenterY,
             multiplier: 1,
-            constant: 0)
+            constant: 100)
         let widthConstraint = NSLayoutConstraint(
             item: self.calendar,
             attribute: .Width,
@@ -123,7 +177,7 @@ class ASCustomLayer: UIView {
 
         self.addConstraints([
             centerXConstraint,
-            centerYConstraint,
+            self.centerYConstraint,
             widthConstraint,
             heightConstraint]
         )
@@ -138,10 +192,26 @@ class ASCustomLayer: UIView {
         return view
     }
     
+    var centerYConstraint : NSLayoutConstraint!
+    
     internal func presentationAnimations() {
-        UIView.animateWithDuration(0.3) {
-            self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        UIView.animateWithDuration(0.2) {
+            self.blackLayer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+            self.calendar.alpha = 1
+            self.centerYConstraint.constant = 0
+            self.layoutIfNeeded()
         }
+    }
+    
+    internal func closingAnimations() {
+        UIView.animateWithDuration(0.2, animations: {
+            self.blackLayer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            self.calendar.alpha = 0
+            self.centerYConstraint.constant = 100
+            self.layoutIfNeeded()
+            }, completion: { (flag) in
+                self.removeFromSuperview()
+        })
     }
     
 }
