@@ -12,6 +12,7 @@ class ASCalendar: NSObject {
     
     var calendarV : ASCalendarV!
     var calendarVM : ASCalendarVM!
+    var settings = ASSettingsM()
     
     override init() {
         super.init()
@@ -26,7 +27,7 @@ class ASCalendar: NSObject {
     }
     
     func goToPage(month: Int, year: Int) {
-        self.calendarVM = ASCalendarVM(month: month, year: year)
+        self.calendarVM = ASCalendarVM(month: month, year: year, settings: settings)
         self.calendarV.viewModel = self.calendarVM
     }
     

@@ -35,6 +35,7 @@
 		9CA210671CEE011D002061C3 /* ASBodyContainerV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210661CEE011D002061C3 /* ASBodyContainerV.swift */; };
 		9CA2106A1CEE0E14002061C3 /* ASBodyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210691CEE0E14002061C3 /* ASBodyVM.swift */; };
 		9CA2106C1CEE10E1002061C3 /* ASCalendarNamesM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */; };
+		9CA2106E1CEF00C2002061C3 /* ASSettingsM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2106D1CEF00C2002061C3 /* ASSettingsM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		9CA210661CEE011D002061C3 /* ASBodyContainerV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASBodyContainerV.swift; path = Calendar/ASBodyContainerV.swift; sourceTree = "<group>"; };
 		9CA210691CEE0E14002061C3 /* ASBodyVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASBodyVM.swift; path = Calendar/ASBodyVM.swift; sourceTree = "<group>"; };
 		9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendarNamesM.swift; path = Calendar/ASCalendarNamesM.swift; sourceTree = "<group>"; };
+		9CA2106D1CEF00C2002061C3 /* ASSettingsM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASSettingsM.swift; path = Calendar/ASSettingsM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		9CA2105F1CEDB494002061C3 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				9CA2106D1CEF00C2002061C3 /* ASSettingsM.swift */,
 				9CA2105D1CEDB42E002061C3 /* ASMonthM.swift */,
 				9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */,
 				9CA210601CEDB4B0002061C3 /* ASWeekM.swift */,
@@ -293,6 +296,7 @@
 				9CA210531CEDABEE002061C3 /* ASWeekBoxV.swift in Sources */,
 				9CA210631CEDB58D002061C3 /* ASDayM.swift in Sources */,
 				9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */,
+				9CA2106E1CEF00C2002061C3 /* ASSettingsM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
