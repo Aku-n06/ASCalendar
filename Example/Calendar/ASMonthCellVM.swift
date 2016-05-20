@@ -25,4 +25,10 @@ class ASMonthCellVM : NSObject {
         }
     }
     
+    //MARK: public Methods
+    
+    func getWeekModel(week : ASWeekM) -> ASWeekVM{
+        return ASWeekVM(settings: self.settingsM, weekM: week)
+    }
+    
 }

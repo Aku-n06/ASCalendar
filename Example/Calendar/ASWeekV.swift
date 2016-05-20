@@ -12,6 +12,21 @@ import UIKit
 class ASWeekV : UIView {
     
     @IBOutlet var boxesV : Array<ASWeekBoxV>!
+    var viewModel : ASWeekVM! {
+        didSet {
+            self.viewModel.weekM.bindAndFire {
+                [unowned self] in
+                _ = $0
+                for i in 0..<7 {
+                    if (self.boxesV[i].view.viewModel == nil) {
+                        self.boxesV[i].view.viewModel = self.viewModel.getModelForIndex(i, currentViewModel: nil)
+                    } else {
+                        self.viewModel.getModelForIndex(i, currentViewModel: self.boxesV[i].view.viewModel)
+                    }
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,19 +34,5 @@ class ASWeekV : UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    //MARK: public methods
-    
-    func populate(week : ASWeekM) {
-        for i in 0..<7 {
-            let day = week.days[i]
-            boxesV[i].view.populate(
-                day.dayNumber,
-                selected: day.daySelected,
-                enabled: day.dayEnabled,
-                highlighted: i > 4
-            )
-        }
     }
 }

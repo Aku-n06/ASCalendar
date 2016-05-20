@@ -27,7 +27,7 @@ class ASMonthCellV: UICollectionViewCell, ASCalendarNamesM {
                         self.rowsV[i].hidden = true
                         self.rowsHeights[i].constant = 0
                     } else {
-                        self.rowsV[i].view.populate($0.weeks[i])
+                        self.rowsV[i].view.viewModel = self.viewModel.getWeekModel($0.weeks[i])
                     }
                 }
             }

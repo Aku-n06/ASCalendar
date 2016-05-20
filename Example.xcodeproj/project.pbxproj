@@ -37,6 +37,8 @@
 		9CA2106C1CEE10E1002061C3 /* ASCalendarNamesM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */; };
 		9CA2106E1CEF00C2002061C3 /* ASSettingsM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2106D1CEF00C2002061C3 /* ASSettingsM.swift */; };
 		9CA210721CEF1417002061C3 /* ASMonthCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */; };
+		9CA210741CEF3AE7002061C3 /* ASWeekVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210731CEF3AE7002061C3 /* ASWeekVM.swift */; };
+		9CA210761CEF3E15002061C3 /* ASDayVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210751CEF3E15002061C3 /* ASDayVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendarNamesM.swift; path = Calendar/ASCalendarNamesM.swift; sourceTree = "<group>"; };
 		9CA2106D1CEF00C2002061C3 /* ASSettingsM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASSettingsM.swift; path = Calendar/ASSettingsM.swift; sourceTree = "<group>"; };
 		9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASMonthCellVM.swift; path = Calendar/ASMonthCellVM.swift; sourceTree = "<group>"; };
+		9CA210731CEF3AE7002061C3 /* ASWeekVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWeekVM.swift; path = Calendar/ASWeekVM.swift; sourceTree = "<group>"; };
+		9CA210751CEF3E15002061C3 /* ASDayVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASDayVM.swift; path = Calendar/ASDayVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +178,10 @@
 			children = (
 				9CA210591CEDB1C4002061C3 /* Dynamic.swift */,
 				9CA2105B1CEDB20D002061C3 /* ASCalendarVM.swift */,
-				9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */,
 				9CA210691CEE0E14002061C3 /* ASBodyVM.swift */,
+				9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */,
+				9CA210731CEF3AE7002061C3 /* ASWeekVM.swift */,
+				9CA210751CEF3E15002061C3 /* ASDayVM.swift */,
 			);
 			name = VM;
 			sourceTree = "<group>";
@@ -300,7 +306,9 @@
 				9CA210531CEDABEE002061C3 /* ASWeekBoxV.swift in Sources */,
 				9CA210631CEDB58D002061C3 /* ASDayM.swift in Sources */,
 				9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */,
+				9CA210761CEF3E15002061C3 /* ASDayVM.swift in Sources */,
 				9CA2106E1CEF00C2002061C3 /* ASSettingsM.swift in Sources */,
+				9CA210741CEF3AE7002061C3 /* ASWeekVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

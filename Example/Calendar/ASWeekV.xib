@@ -73,13 +73,13 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outletCollection property="boxesV" destination="NMT-zM-OHD" id="ff2-8J-gx2"/>
-                <outletCollection property="boxesV" destination="vSy-H3-Ftr" id="IZd-gy-Fop"/>
-                <outletCollection property="boxesV" destination="T7r-NK-XcH" id="XiU-jj-at7"/>
-                <outletCollection property="boxesV" destination="Tpo-YJ-jy7" id="H8D-DW-WLB"/>
-                <outletCollection property="boxesV" destination="xhr-IO-Jhg" id="zWX-8R-Aan"/>
-                <outletCollection property="boxesV" destination="dys-WM-UdW" id="fLi-jQ-LBy"/>
-                <outletCollection property="boxesV" destination="cVy-N1-mB8" id="INo-zm-nhi"/>
+                <outletCollection property="boxesV" destination="NMT-zM-OHD" collectionClass="NSMutableArray" id="ff2-8J-gx2"/>
+                <outletCollection property="boxesV" destination="vSy-H3-Ftr" collectionClass="NSMutableArray" id="IZd-gy-Fop"/>
+                <outletCollection property="boxesV" destination="T7r-NK-XcH" collectionClass="NSMutableArray" id="XiU-jj-at7"/>
+                <outletCollection property="boxesV" destination="Tpo-YJ-jy7" collectionClass="NSMutableArray" id="H8D-DW-WLB"/>
+                <outletCollection property="boxesV" destination="xhr-IO-Jhg" collectionClass="NSMutableArray" id="zWX-8R-Aan"/>
+                <outletCollection property="boxesV" destination="dys-WM-UdW" collectionClass="NSMutableArray" id="fLi-jQ-LBy"/>
+                <outletCollection property="boxesV" destination="cVy-N1-mB8" collectionClass="NSMutableArray" id="INo-zm-nhi"/>
             </connections>
             <point key="canvasLocation" x="564.5" y="401"/>
         </view>
