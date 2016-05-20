@@ -15,8 +15,8 @@ class ASDayV : UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //bubbleView.hidden = true
-        //numberLabel.text = ""
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        self.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,6 +36,12 @@ class ASDayV : UIView {
         } else {
             self.numberLabel.textColor = UIColor.blackColor()
         }
+    }
+    
+    //MARK: user interaction
+    
+    func handleTap () {
+        
     }
     
 }

@@ -11,20 +11,22 @@
 
 class Dynamic<T> {
     typealias Listener = T -> Void
-    var listener: Listener?
+    var listener = Array<Listener?>()
     
     func bind(listener: Listener?) {
-        self.listener = listener
+        self.listener.append(listener)
     }
     
     func bindAndFire(listener: Listener?) {
-        self.listener = listener
+        self.listener.append(listener)
         listener?(value)
     }
     
     var value: T {
         didSet {
-            listener?(value)
+            self.listener.forEach { (listener) in
+                listener?(value)
+            }
         }
     }
     

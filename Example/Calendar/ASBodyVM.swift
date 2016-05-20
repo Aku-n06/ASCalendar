@@ -10,15 +10,15 @@ import Foundation
 
 class ASBodyVM: NSObject {
     
-    var selectedMonth: Dynamic<(month : Int, year : Int)>!
+    var settingsM: ASSettingsM!
     
-    init(month : Int, year : Int) {
-        self.selectedMonth = Dynamic(month : month, year : year)
+    init(settings: ASSettingsM) {
+        self.settingsM = settings
     }
     
     internal func switchMonth(increment : Bool) {
-        var mutantingMonth = self.selectedMonth.value.month
-        var mutantingYear = self.selectedMonth.value.year
+        var mutantingMonth = self.settingsM.selectedMonth.value.month
+        var mutantingYear = self.settingsM.selectedMonth.value.year
         if (increment == false) {
             //previus month
             mutantingMonth -= 1
@@ -35,12 +35,12 @@ class ASBodyVM: NSObject {
             }
         }
         //apply
-        selectedMonth.value = (month : mutantingMonth, year : mutantingYear)
+        self.settingsM.selectedMonth.value = (month : mutantingMonth, year : mutantingYear)
     }
     
     internal func calculateMonthOffset(row : Int) -> (month: Int, year: Int) {
-        var monthOffset = self.selectedMonth.value.month
-        var yearOffset = self.selectedMonth.value.year
+        var monthOffset = self.settingsM.selectedMonth.value.month
+        var yearOffset = self.settingsM.selectedMonth.value.year
         let offset = row - 1
         monthOffset = monthOffset + offset
         if (monthOffset == 13) {

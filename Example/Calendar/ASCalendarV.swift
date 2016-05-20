@@ -27,13 +27,6 @@ class ASCalendarV: UIView {
     
     var viewModel: ASCalendarVM! {
         didSet {
-            viewModel.selectedMonth.bind {
-                [unowned self] in
-                self.bodyV.view.showMonth($0.month, year: $0.year)
-            }
-            viewModel.calendarSettings.bind {
-                let settings = $0
-            }
             viewModel.headerString.bindAndFire {
                 [unowned self] in
                 self.headerLabel.text = $0

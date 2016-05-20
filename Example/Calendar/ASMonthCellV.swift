@@ -39,6 +39,4 @@ class ASMonthCellV: UICollectionViewCell, ASCalendarNamesM {
         }
     }
     
-    
-    
 }

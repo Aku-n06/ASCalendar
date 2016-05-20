@@ -12,11 +12,14 @@ enum BodySelectionStyle {
     case Week
 }
 
-struct ASSettingsM {
+class ASSettingsM : NSObject {
     
-    var selectionStyle : BodySelectionStyle!
+    var selectionStyle : Dynamic<BodySelectionStyle>!
+    var selectedMonth : Dynamic<(month : Int, year: Int)>!
     
-    init() {
-        self.selectionStyle = .Week
+    init(month : Int, year : Int) {
+        super.init()
+        self.selectedMonth = Dynamic((month : month, year: year))
+        self.selectionStyle = Dynamic(.Week)
     }
 }

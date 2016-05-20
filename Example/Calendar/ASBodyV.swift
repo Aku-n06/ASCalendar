@@ -25,6 +25,11 @@ ASCalendarNamesM {
     var viewModel: ASBodyVM? {
         didSet {
             self.reloadCell(middleIndexPath)
+            self.viewModel?.settingsM.selectedMonth.bindAndFire{
+                [unowned self] in
+                _ = $0
+                self.reloadCell(self.middleIndexPath)
+            }
         }
     }
     
@@ -54,13 +59,6 @@ ASCalendarNamesM {
         )
         self.collectionView.collectionViewLayout = collapsedLayout
         self.collectionView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
-    }
-    
-    //MARK: public methods
-    
-    func showMonth(month : Int, year : Int) {
-        self.viewModel?.selectedMonth.value = (month : month, year : year)
-        self.reloadCell(middleIndexPath)
     }
     
     //MARK: collectionView dataSource
@@ -100,12 +98,10 @@ ASCalendarNamesM {
         if (scrollView.contentOffset.y <= 0) {
             self.viewModel?.switchMonth(false)
             self.reloadCell(previusIndexPath)
-            self.reloadCell(middleIndexPath)
             scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         } else if (scrollView.contentOffset.y >= self.frame.height * 2) {
             self.viewModel?.switchMonth(true)
             self.reloadCell(nextIndexPath)
-            self.reloadCell(middleIndexPath)
             scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         }
     }

@@ -32,20 +32,20 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RwU-oN-8Od" userLabel="View" customClass="ASBodyContainerV" customModule="Example" customModuleProvider="target">
                     <rect key="frame" x="30" y="40" width="190" height="210"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoQ-fq-kQU">
-                    <rect key="frame" x="0.0" y="70" width="30" height="180"/>
-                    <color key="backgroundColor" red="0.99215686270000003" green="0.95294117649999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="sIX-hN-LgZ"/>
-                    </constraints>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2D-Gy-gcb">
-                    <rect key="frame" x="220" y="70" width="30" height="180"/>
-                    <color key="backgroundColor" red="0.99215686270000003" green="0.95294117649999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="220" y="40" width="30" height="210"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="lZp-oW-Cvh"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoQ-fq-kQU">
+                    <rect key="frame" x="0.0" y="40" width="30" height="210"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="sIX-hN-LgZ"/>
                     </constraints>
                 </view>
             </subviews>
@@ -53,12 +53,12 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="j2D-Gy-gcb" secondAttribute="bottom" id="5Cv-6E-CpW"/>
                 <constraint firstItem="IL1-As-t89" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BBa-Fi-BDQ"/>
-                <constraint firstItem="hoQ-fq-kQU" firstAttribute="top" secondItem="IL1-As-t89" secondAttribute="bottom" constant="30" id="GL4-vP-ZH9"/>
+                <constraint firstItem="hoQ-fq-kQU" firstAttribute="top" secondItem="IL1-As-t89" secondAttribute="bottom" id="GL4-vP-ZH9"/>
                 <constraint firstItem="j2D-Gy-gcb" firstAttribute="leading" secondItem="RwU-oN-8Od" secondAttribute="trailing" id="HIX-ry-dmS"/>
                 <constraint firstItem="j2D-Gy-gcb" firstAttribute="leading" secondItem="RwU-oN-8Od" secondAttribute="trailing" id="Kjt-Um-RpW"/>
                 <constraint firstItem="RwU-oN-8Od" firstAttribute="leading" secondItem="hoQ-fq-kQU" secondAttribute="trailing" id="Sbi-kd-JZm"/>
                 <constraint firstAttribute="trailing" secondItem="IL1-As-t89" secondAttribute="trailing" id="XPb-Ub-qK0"/>
-                <constraint firstItem="j2D-Gy-gcb" firstAttribute="top" secondItem="IL1-As-t89" secondAttribute="bottom" constant="30" id="Yky-Aa-70P"/>
+                <constraint firstItem="j2D-Gy-gcb" firstAttribute="top" secondItem="IL1-As-t89" secondAttribute="bottom" id="Yky-Aa-70P"/>
                 <constraint firstItem="RwU-oN-8Od" firstAttribute="top" secondItem="IL1-As-t89" secondAttribute="bottom" id="aC0-po-c9V"/>
                 <constraint firstItem="hoQ-fq-kQU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="erF-Z7-AHa"/>
                 <constraint firstAttribute="bottom" secondItem="RwU-oN-8Od" secondAttribute="bottom" id="klU-T9-XaH"/>
