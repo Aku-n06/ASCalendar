@@ -13,6 +13,26 @@ class ASMonthCellV: UICollectionViewCell, ASCalendarNamesM {
     @IBOutlet var rowsV : Array<ASMonthRowV>!
     @IBOutlet var rowsHeights : Array<NSLayoutConstraint>!
     @IBOutlet var monthLabel : UILabel!
+    var viewModel : ASMonthCellVM! {
+        didSet {
+            self.viewModel.monthM.bindAndFire{
+                [unowned self] in
+                //populate
+                self.monthLabel.text = self.getMonthNames()[$0.month-1].uppercaseString
+                for i in 0..<self.rowsV.count {
+                    //show or hide week
+                    self.rowsV[i].hidden = false
+                    self.rowsHeights[i].constant = 1000
+                    if (i >= $0.weeks.count) {
+                        self.rowsV[i].hidden = true
+                        self.rowsHeights[i].constant = 0
+                    } else {
+                        self.rowsV[i].view.populate($0.weeks[i])
+                    }
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,23 +40,6 @@ class ASMonthCellV: UICollectionViewCell, ASCalendarNamesM {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    //MARK: public methods
-    
-    func populate(month : ASMonthM) {
-        self.monthLabel.text = self.getMonthNames()[month.month-1].uppercaseString
-        for i in 0..<rowsV.count {
-            //show or hide week
-            rowsV[i].hidden = false
-            rowsHeights[i].constant = 1000
-            if (i >= month.weeks.count) {
-                rowsV[i].hidden = true
-                rowsHeights[i].constant = 0
-            } else {
-                rowsV[i].view.populate(month.weeks[i])
-            }
-        }
     }
     
 }

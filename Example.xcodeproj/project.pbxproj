@@ -36,6 +36,7 @@
 		9CA2106A1CEE0E14002061C3 /* ASBodyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210691CEE0E14002061C3 /* ASBodyVM.swift */; };
 		9CA2106C1CEE10E1002061C3 /* ASCalendarNamesM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */; };
 		9CA2106E1CEF00C2002061C3 /* ASSettingsM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2106D1CEF00C2002061C3 /* ASSettingsM.swift */; };
+		9CA210721CEF1417002061C3 /* ASMonthCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		9CA210691CEE0E14002061C3 /* ASBodyVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASBodyVM.swift; path = Calendar/ASBodyVM.swift; sourceTree = "<group>"; };
 		9CA2106B1CEE10E1002061C3 /* ASCalendarNamesM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASCalendarNamesM.swift; path = Calendar/ASCalendarNamesM.swift; sourceTree = "<group>"; };
 		9CA2106D1CEF00C2002061C3 /* ASSettingsM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASSettingsM.swift; path = Calendar/ASSettingsM.swift; sourceTree = "<group>"; };
+		9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASMonthCellVM.swift; path = Calendar/ASMonthCellVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,21 +121,21 @@
 				9CA2102D1CECA11B002061C3 /* ASCalendar.swift */,
 				9CA2102F1CECA155002061C3 /* ASCustomPopover.swift */,
 				9CA210321CECA37D002061C3 /* ASCustomLayer.swift */,
-				9CA210381CECB391002061C3 /* UI */,
+				9CA210381CECB391002061C3 /* V */,
 				9CA210561CEDB14C002061C3 /* VM */,
 				9CA2105F1CEDB494002061C3 /* M */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
 		};
-		9CA210381CECB391002061C3 /* UI */ = {
+		9CA210381CECB391002061C3 /* V */ = {
 			isa = PBXGroup;
 			children = (
 				9CA210341CECA4B2002061C3 /* ASCalendarV.xib */,
 				9CA210361CECA4C3002061C3 /* ASCalendarV.swift */,
 				9CA210681CEE0142002061C3 /* body */,
 			);
-			name = UI;
+			name = V;
 			sourceTree = "<group>";
 		};
 		9CA210451CEDA6D5002061C3 /* body cell */ = {
@@ -172,6 +174,7 @@
 			children = (
 				9CA210591CEDB1C4002061C3 /* Dynamic.swift */,
 				9CA2105B1CEDB20D002061C3 /* ASCalendarVM.swift */,
+				9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */,
 				9CA210691CEE0E14002061C3 /* ASBodyVM.swift */,
 			);
 			name = VM;
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CA210671CEE011D002061C3 /* ASBodyContainerV.swift in Sources */,
+				9CA210721CEF1417002061C3 /* ASMonthCellVM.swift in Sources */,
 				9CA2106A1CEE0E14002061C3 /* ASBodyVM.swift in Sources */,
 				9CA2105A1CEDB1C4002061C3 /* Dynamic.swift in Sources */,
 				9CA2101E1CEC9E93002061C3 /* ViewController.swift in Sources */,

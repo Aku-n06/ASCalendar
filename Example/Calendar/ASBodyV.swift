@@ -81,9 +81,11 @@ ASCalendarNamesM {
             forIndexPath: indexPath
         ) as! ASMonthCellV
         if (self.viewModel != nil) {
-            let offset = self.viewModel!.calculateMonthOffset(indexPath.row)
-            let month = ASMonthM(month: offset.month, year: offset.year)
-            cell.populate(month)
+            if (cell.viewModel == nil) {
+                cell.viewModel = self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: nil)
+            } else {
+                self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: cell.viewModel)
+            }
         }
         return cell
     }
@@ -110,10 +112,12 @@ ASCalendarNamesM {
     
     internal func reloadCell(indexPath : NSIndexPath) {
         if (self.viewModel != nil) {
-            let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as? ASMonthCellV
-            let offset = self.viewModel!.calculateMonthOffset(indexPath.row)
-            let month = ASMonthM(month: offset.month, year: offset.year)
-            cell?.populate(month)
+            let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as! ASMonthCellV
+            if (cell.viewModel == nil) {
+                cell.viewModel = self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: nil)
+            } else {
+                self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: cell.viewModel)
+            }
         }
     }
     
