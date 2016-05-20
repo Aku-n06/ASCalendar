@@ -112,11 +112,12 @@ ASCalendarNamesM {
     
     internal func reloadCell(indexPath : NSIndexPath) {
         if (self.viewModel != nil) {
-            let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as! ASMonthCellV
-            if (cell.viewModel == nil) {
-                cell.viewModel = self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: nil)
-            } else {
-                self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: cell.viewModel)
+            if let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as? ASMonthCellV {
+                if (cell.viewModel == nil) {
+                    cell.viewModel = self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: nil)
+                } else {
+                    self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: cell.viewModel)
+                }
             }
         }
     }
