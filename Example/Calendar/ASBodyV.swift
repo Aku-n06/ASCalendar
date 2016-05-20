@@ -24,6 +24,7 @@ ASCalendarNamesM {
     
     var viewModel: ASBodyVM? {
         didSet {
+            self.reloadCell(middleIndexPath)
         }
     }
     
@@ -55,15 +56,10 @@ ASCalendarNamesM {
         self.collectionView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
     }
     
-    
     //MARK: public methods
     
     func showMonth(month : Int, year : Int) {
-        if (self.viewModel == nil) {
-            self.viewModel = ASBodyVM(month: month, year: year)
-        } else {
-            self.viewModel?.selectedMonth.value = (month : month, year : year)
-        }
+        self.viewModel?.selectedMonth.value = (month : month, year : year)
         self.reloadCell(middleIndexPath)
     }
     
