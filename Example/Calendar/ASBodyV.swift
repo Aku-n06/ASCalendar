@@ -13,22 +13,25 @@ import UIKit
 
 class ASBodyV:
 UIView,
-UICollectionViewDataSource,
-UICollectionViewDelegate,
 UIScrollViewDelegate,
 ASCalendarNamesM {
 
-    @IBOutlet var collectionView : UICollectionView!
+    @IBOutlet var scrollView : UIScrollView!
+    @IBOutlet var monthBoxesViews : Array<ASMonthBoxV>!
     @IBOutlet var dayLabel : Array<UILabel>!
     var currentIndex = 100
     
     var viewModel: ASBodyVM? {
         didSet {
-            self.reloadCell(middleIndexPath)
+            self.reloadCell(0)
+            self.reloadCell(1)
+            self.reloadCell(2)
             self.viewModel?.settingsM.selectedMonth.bindAndFire{
                 [unowned self] in
                 _ = $0
-                self.reloadCell(self.middleIndexPath)
+                self.reloadCell(0)
+                self.reloadCell(1)
+                self.reloadCell(2)
             }
         }
     }
@@ -43,81 +46,33 @@ ASCalendarNamesM {
     }
     
     override func layoutSubviews() {
-        //horizontal layout without spacing
-        let collapsedLayout = UICollectionViewFlowLayout()
-        collapsedLayout.itemSize = CGSize(width: self.frame.size.width, height: self.frame.size.height)
-        collapsedLayout.scrollDirection = .Vertical
-        collapsedLayout.minimumInteritemSpacing = 0
-        collapsedLayout.minimumLineSpacing = 0
-        //setup collection view
-        self.collectionView.pagingEnabled = true
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
-        self.collectionView.registerNib(
-            UINib(nibName: "ASMonthCellV", bundle: nil),
-            forCellWithReuseIdentifier: "Cell"
-        )
-        self.collectionView.collectionViewLayout = collapsedLayout
-        self.collectionView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
+        self.scrollView.delegate = self
+        self.scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
+        self.scrollView.pagingEnabled = true
     }
-    
-    //MARK: collectionView dataSource
-    
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func collectionView(
-        collectionView: UICollectionView,
-        cellForItemAtIndexPath indexPath: NSIndexPath
-        ) -> UICollectionViewCell
-    {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(
-            "Cell",
-            forIndexPath: indexPath
-        ) as! ASMonthCellV
-        if (self.viewModel != nil) {
-            if (cell.viewModel == nil) {
-                cell.viewModel = self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: nil)
-            } else {
-                self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: cell.viewModel)
-            }
-        }
-        return cell
-    }
+
     
     //MARK: scrollView delegate
-    
-    var previusIndexPath = NSIndexPath(forItem: 0, inSection: 0)
-    var middleIndexPath = NSIndexPath(forItem: 1, inSection: 0)
-    var nextIndexPath = NSIndexPath(forItem: 2, inSection: 0)
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if (scrollView.contentOffset.y <= 0) {
             self.viewModel?.switchMonth(false)
-            self.reloadCell(previusIndexPath)
             scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         } else if (scrollView.contentOffset.y >= self.frame.height * 2) {
             self.viewModel?.switchMonth(true)
-            self.reloadCell(nextIndexPath)
             scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         }
     }
     
     //MARK: private methods
     
-    internal func reloadCell(indexPath : NSIndexPath) {
+    internal func reloadCell(index : Int) {
         if (self.viewModel != nil) {
-            if let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as? ASMonthCellV {
-                if (cell.viewModel == nil) {
-                    cell.viewModel = self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: nil)
-                } else {
-                    self.viewModel!.getViewModelForRow(indexPath.row, currentViewModel: cell.viewModel)
-                }
+            let cell = self.monthBoxesViews[index].view
+            if (cell.viewModel == nil) {
+                cell.viewModel = self.viewModel!.getViewModelForRow(index, currentViewModel: nil)
+            } else {
+                self.viewModel!.getViewModelForRow(index, currentViewModel: cell.viewModel)
             }
         }
     }

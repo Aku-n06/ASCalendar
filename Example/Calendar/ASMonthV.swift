@@ -1,5 +1,5 @@
 //
-//  ASMonthCellV.swift
+//  ASMonthV.swift
 //  Example
 //
 //  Created by alberto.scampini on 18/05/2016.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ASMonthCellV: UICollectionViewCell, ASCalendarNamesM {
+class ASMonthV: UIView, ASCalendarNamesM {
     
     @IBOutlet var rowsV : Array<ASMonthRowV>!
     @IBOutlet var rowsHeights : Array<NSLayoutConstraint>!
     @IBOutlet var monthLabel : UILabel!
-    var viewModel : ASMonthCellVM! {
+    var viewModel : ASMonthVM! {
         didSet {
             self.viewModel.monthM.bindAndFire{
                 [unowned self] in

@@ -6,7 +6,7 @@
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ASMonthCellV" customModule="Example" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ASMonthV" customModule="Example" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="421" height="428"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

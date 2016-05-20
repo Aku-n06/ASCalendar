@@ -1,5 +1,5 @@
 //
-//  ASMonthCellVM.swift
+//  ASMonthVM.swift
 //  Example
 //
 //  Created by alberto.scampini on 20/05/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ASMonthCellVM : NSObject {
+class ASMonthVM : NSObject {
     
     var settingsM : ASSettingsM!
     var monthM : Dynamic<ASMonthM>!

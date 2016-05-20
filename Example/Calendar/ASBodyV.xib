@@ -3,23 +3,63 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="O45-sK-cV2" userLabel="View" customClass="ASBodyV" customModule="Example" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="258" height="213"/>
+            <rect key="frame" x="0.0" y="0.0" width="258" height="189"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3QU-53-l7c">
-                    <rect key="frame" x="0.0" y="0.0" width="258" height="213"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WxE-1J-l21">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG9-w6-q1p">
+                    <rect key="frame" x="0.0" y="0.0" width="258" height="189"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZh-KW-BxN">
+                            <rect key="frame" x="0.0" y="0.0" width="258" height="567"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-zv-qNk" userLabel="previusMonthV" customClass="ASMonthBoxV" customModule="Example" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="258" height="189"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNK-VT-Y1T" userLabel="currentMonthV" customClass="ASMonthBoxV" customModule="Example" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="189" width="258" height="189"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulr-on-Lds" userLabel="nextMonthV" customClass="ASMonthBoxV" customModule="Example" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="378" width="258" height="189"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="CH6-zv-qNk" firstAttribute="top" secondItem="BZh-KW-BxN" secondAttribute="top" id="0WI-Gj-tf8"/>
+                                <constraint firstAttribute="trailing" secondItem="CH6-zv-qNk" secondAttribute="trailing" id="2jI-6z-8eL"/>
+                                <constraint firstItem="zNK-VT-Y1T" firstAttribute="top" secondItem="CH6-zv-qNk" secondAttribute="bottom" id="BGO-Xk-l8W"/>
+                                <constraint firstItem="zNK-VT-Y1T" firstAttribute="height" secondItem="CH6-zv-qNk" secondAttribute="height" id="Fe5-gk-nxg"/>
+                                <constraint firstAttribute="bottom" secondItem="ulr-on-Lds" secondAttribute="bottom" id="J2x-9I-r09"/>
+                                <constraint firstItem="ulr-on-Lds" firstAttribute="leading" secondItem="BZh-KW-BxN" secondAttribute="leading" id="Ohj-5r-CPY"/>
+                                <constraint firstItem="zNK-VT-Y1T" firstAttribute="leading" secondItem="BZh-KW-BxN" secondAttribute="leading" id="RLC-Ew-lrV"/>
+                                <constraint firstItem="ulr-on-Lds" firstAttribute="top" secondItem="zNK-VT-Y1T" secondAttribute="bottom" id="fDd-et-GdE"/>
+                                <constraint firstAttribute="trailing" secondItem="zNK-VT-Y1T" secondAttribute="trailing" id="nkE-Aq-ph0"/>
+                                <constraint firstItem="CH6-zv-qNk" firstAttribute="leading" secondItem="BZh-KW-BxN" secondAttribute="leading" id="npC-ot-wQW"/>
+                                <constraint firstAttribute="trailing" secondItem="ulr-on-Lds" secondAttribute="trailing" id="t8e-sU-EGm"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="BZh-KW-BxN" firstAttribute="top" secondItem="fG9-w6-q1p" secondAttribute="top" id="9z8-5r-0kI"/>
+                        <constraint firstItem="BZh-KW-BxN" firstAttribute="leading" secondItem="fG9-w6-q1p" secondAttribute="leading" id="OUR-Cd-L8D"/>
+                        <constraint firstAttribute="bottom" secondItem="BZh-KW-BxN" secondAttribute="bottom" id="PGk-CR-70o"/>
+                        <constraint firstItem="BZh-KW-BxN" firstAttribute="width" secondItem="fG9-w6-q1p" secondAttribute="width" id="UFV-et-Cmk"/>
+                        <constraint firstAttribute="trailing" secondItem="BZh-KW-BxN" secondAttribute="trailing" id="q4j-rh-Abv"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="UFV-et-Cmk"/>
+                        </mask>
+                    </variation>
+                </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cI2-25-i31">
                     <rect key="frame" x="0.0" y="0.0" width="258" height="30"/>
                     <subviews>
@@ -102,18 +142,21 @@
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="fG9-w6-q1p" secondAttribute="bottom" id="07g-Gw-7Xl"/>
+                <constraint firstItem="fG9-w6-q1p" firstAttribute="top" secondItem="O45-sK-cV2" secondAttribute="top" id="0KC-jh-M5S"/>
                 <constraint firstAttribute="trailing" secondItem="cI2-25-i31" secondAttribute="trailing" id="1NW-KU-Fca"/>
-                <constraint firstItem="3QU-53-l7c" firstAttribute="top" secondItem="O45-sK-cV2" secondAttribute="top" id="Qp5-bF-zJD"/>
-                <constraint firstAttribute="bottom" secondItem="3QU-53-l7c" secondAttribute="bottom" id="c1x-Xu-jYJ"/>
+                <constraint firstItem="BZh-KW-BxN" firstAttribute="height" secondItem="O45-sK-cV2" secondAttribute="height" multiplier="3" id="5L6-6Y-kiM"/>
+                <constraint firstItem="BZh-KW-BxN" firstAttribute="width" secondItem="O45-sK-cV2" secondAttribute="width" id="CPD-D3-CCv"/>
                 <constraint firstItem="cI2-25-i31" firstAttribute="top" secondItem="O45-sK-cV2" secondAttribute="top" id="elV-Bg-0uU"/>
-                <constraint firstAttribute="trailing" secondItem="3QU-53-l7c" secondAttribute="trailing" id="nTV-YG-k24"/>
-                <constraint firstItem="3QU-53-l7c" firstAttribute="leading" secondItem="O45-sK-cV2" secondAttribute="leading" id="sUS-a3-CBQ"/>
+                <constraint firstAttribute="trailing" secondItem="fG9-w6-q1p" secondAttribute="trailing" id="kIG-nK-yuj"/>
+                <constraint firstItem="fG9-w6-q1p" firstAttribute="leading" secondItem="O45-sK-cV2" secondAttribute="leading" id="mhC-XR-0uS"/>
                 <constraint firstItem="cI2-25-i31" firstAttribute="leading" secondItem="O45-sK-cV2" secondAttribute="leading" id="xTl-sO-65e"/>
+                <constraint firstItem="CH6-zv-qNk" firstAttribute="height" secondItem="O45-sK-cV2" secondAttribute="height" id="yaM-GP-KDu"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="collectionView" destination="3QU-53-l7c" id="8CQ-Qj-rUr"/>
+                <outlet property="scrollView" destination="fG9-w6-q1p" id="ad3-nx-Qx4"/>
                 <outletCollection property="dayLabel" destination="hc5-a3-AiG" collectionClass="NSMutableArray" id="4IU-fa-UW3"/>
                 <outletCollection property="dayLabel" destination="XXf-bJ-ZCG" collectionClass="NSMutableArray" id="Kln-TE-YlQ"/>
                 <outletCollection property="dayLabel" destination="TFp-n3-NWB" collectionClass="NSMutableArray" id="PcZ-fl-Fs7"/>
@@ -121,8 +164,11 @@
                 <outletCollection property="dayLabel" destination="Eq4-lF-LhZ" collectionClass="NSMutableArray" id="vgQ-HP-qgP"/>
                 <outletCollection property="dayLabel" destination="voX-hd-g9E" collectionClass="NSMutableArray" id="Xpm-2g-fHU"/>
                 <outletCollection property="dayLabel" destination="l4T-w2-8Ee" collectionClass="NSMutableArray" id="2Yc-fZ-1yY"/>
+                <outletCollection property="monthBoxesViews" destination="CH6-zv-qNk" collectionClass="NSMutableArray" id="fny-ac-SW0"/>
+                <outletCollection property="monthBoxesViews" destination="zNK-VT-Y1T" collectionClass="NSMutableArray" id="Gbx-bc-LEK"/>
+                <outletCollection property="monthBoxesViews" destination="ulr-on-Lds" collectionClass="NSMutableArray" id="V6m-0K-U5U"/>
             </connections>
-            <point key="canvasLocation" x="276" y="192.5"/>
+            <point key="canvasLocation" x="276" y="180.5"/>
         </view>
     </objects>
 </document>

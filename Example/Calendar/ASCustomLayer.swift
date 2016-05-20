@@ -195,10 +195,10 @@ class ASCustomLayer: UIView {
     var centerYConstraint : NSLayoutConstraint!
     
     internal func presentationAnimations() {
+        self.centerYConstraint.constant = 0
         UIView.animateWithDuration(0.2) {
             self.blackLayer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
             self.calendar.alpha = 1
-            self.centerYConstraint.constant = 0
             self.layoutIfNeeded()
         }
     }
@@ -209,7 +209,7 @@ class ASCustomLayer: UIView {
             self.calendar.alpha = 0
             self.centerYConstraint.constant = 100
             self.layoutIfNeeded()
-            }, completion: { (flag) in
+            }, completion: {[unowned self] (flag)  in
                 self.removeFromSuperview()
         })
     }
