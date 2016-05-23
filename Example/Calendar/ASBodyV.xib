@@ -56,14 +56,8 @@
                         <constraint firstItem="BZh-KW-BxN" firstAttribute="top" secondItem="fG9-w6-q1p" secondAttribute="top" id="9z8-5r-0kI"/>
                         <constraint firstItem="BZh-KW-BxN" firstAttribute="leading" secondItem="fG9-w6-q1p" secondAttribute="leading" id="OUR-Cd-L8D"/>
                         <constraint firstAttribute="bottom" secondItem="BZh-KW-BxN" secondAttribute="bottom" id="PGk-CR-70o"/>
-                        <constraint firstItem="BZh-KW-BxN" firstAttribute="width" secondItem="fG9-w6-q1p" secondAttribute="width" id="UFV-et-Cmk"/>
                         <constraint firstAttribute="trailing" secondItem="BZh-KW-BxN" secondAttribute="trailing" id="q4j-rh-Abv"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="UFV-et-Cmk"/>
-                        </mask>
-                    </variation>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cI2-25-i31">
                     <rect key="frame" x="0.0" y="0.0" width="258" height="30"/>

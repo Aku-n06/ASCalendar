@@ -46,7 +46,6 @@ ASCalendarNamesM {
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
         self.scrollView.delegate = self
         self.scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         self.scrollView.pagingEnabled = true

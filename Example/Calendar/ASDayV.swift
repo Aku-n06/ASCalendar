@@ -20,6 +20,11 @@ class ASDayV : UIView {
                 if ($0.dayEnabled == true) {
                     self.numberLabel.text = String($0.dayNumber)
                     self.selectionV.hidden = !$0.daySelected
+                    if ($0.daySelectable == true) {
+                        self.numberLabel.textColor = UIColor.blackColor()
+                    } else {
+                        self.numberLabel.textColor = UIColor.grayColor()
+                    }
                 }
             }
         }
@@ -27,7 +32,7 @@ class ASDayV : UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        let tapGesture  = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.addGestureRecognizer(tapGesture)
         self.userInteractionEnabled = true
     }
@@ -44,7 +49,9 @@ class ASDayV : UIView {
     //MARK: user interaction
     
     func handleTap () {
-        self.viewModel.selected()
+        if (self.viewModel.dayM.value.daySelectable == true) {
+            self.viewModel.selected()
+        }
     }
     
 }

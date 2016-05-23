@@ -38,7 +38,6 @@ class ASWeekV : UIView {
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
         self.selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
     }
     

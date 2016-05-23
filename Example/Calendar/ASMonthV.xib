@@ -80,7 +80,6 @@
                 <constraint firstItem="fcS-Y7-LIs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cbO-sc-9JI"/>
                 <constraint firstAttribute="bottom" secondItem="PzL-V4-pQ8" secondAttribute="bottom" id="flr-3X-a3R"/>
                 <constraint firstItem="PzL-V4-pQ8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="g74-sK-XnJ"/>
-                <constraint firstItem="6iH-DO-o5U" firstAttribute="top" secondItem="JRG-MK-vJ7" secondAttribute="bottom" id="hFe-sI-Hf5"/>
                 <constraint firstItem="fcS-Y7-LIs" firstAttribute="top" secondItem="YZJ-RM-WSp" secondAttribute="bottom" id="k0U-R4-KAR"/>
                 <constraint firstAttribute="trailing" secondItem="JRG-MK-vJ7" secondAttribute="trailing" id="mMh-6a-4vF"/>
                 <constraint firstItem="6iH-DO-o5U" firstAttribute="top" secondItem="JRG-MK-vJ7" secondAttribute="bottom" priority="750" id="mkh-4A-xmY"/>
@@ -92,11 +91,6 @@
                 <constraint firstItem="JaV-JZ-Z8c" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="zAN-YT-9KO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="hFe-sI-Hf5"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="monthLabel" destination="JaV-JZ-Z8c" id="DHe-jx-sZD"/>
                 <outletCollection property="rowsV" destination="JRG-MK-vJ7" collectionClass="NSMutableArray" id="fre-CA-8Bc"/>

@@ -23,8 +23,8 @@ class ViewController: UIViewController {
     @IBAction func openCalendar(sender : UIButton) {
         
         let calendar = ASCalendar()
+        calendar.calendarSettings
         calendar.showCalendarAsLayer()
-        calendar.goToPage(5, year: 2016)
     }
 }
 

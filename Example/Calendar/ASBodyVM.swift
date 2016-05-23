@@ -58,7 +58,7 @@ class ASBodyVM: NSObject {
     
     func getViewModelForRow(index : Int, currentViewModel : ASMonthVM?) -> ASMonthVM? {
         let offset = self.calculateMonthOffset(index)
-        let month = ASMonthM(month: offset.month, year: offset.year)
+        let month = ASMonthM(month: offset.month, year: offset.year, settings: self.settingsM)
         //update or return the viewModel
         if (currentViewModel != nil) {
             currentViewModel!.monthM.value = month

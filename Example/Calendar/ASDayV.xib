@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,16 +12,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMk-tt-QVC">
-                    <rect key="frame" x="2" y="2" width="259" height="259"/>
+                    <rect key="frame" x="0.0" y="0.0" width="263" height="263"/>
                     <color key="backgroundColor" red="1" green="0.45308846380000001" blue="0.35332956710000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="JMk-tt-QVC" secondAttribute="height" id="dWr-IM-cCD"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="dWr-IM-cCD"/>
-                        </mask>
-                    </variation>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-lO-3xd">
                     <rect key="frame" x="0.0" y="0.0" width="263" height="263"/>
@@ -34,26 +24,28 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="JMk-tt-QVC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FIN-ty-EXw"/>
+                <constraint firstItem="JMk-tt-QVC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" symbolic="YES" id="Aea-Yf-FoE"/>
+                <constraint firstAttribute="bottom" secondItem="JMk-tt-QVC" secondAttribute="bottom" id="CEt-bl-Nce"/>
                 <constraint firstAttribute="trailing" secondItem="JMk-tt-QVC" secondAttribute="trailing" constant="2" id="LJd-vn-fx8"/>
                 <constraint firstAttribute="trailing" secondItem="JWO-lO-3xd" secondAttribute="trailing" id="NbJ-ch-1gr"/>
                 <constraint firstAttribute="bottom" secondItem="JMk-tt-QVC" secondAttribute="bottom" constant="2" id="O6B-ju-cr5"/>
+                <constraint firstItem="JMk-tt-QVC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="R6f-o6-TSD"/>
+                <constraint firstAttribute="trailing" secondItem="JMk-tt-QVC" secondAttribute="trailing" id="Ria-Kd-tBG"/>
+                <constraint firstItem="JMk-tt-QVC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ryb-EV-FJ2"/>
                 <constraint firstItem="JMk-tt-QVC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="UR6-gJ-JZy"/>
-                <constraint firstItem="JMk-tt-QVC" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="dc1-Hf-OYD"/>
                 <constraint firstItem="JMk-tt-QVC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="dyT-bX-OdL"/>
-                <constraint firstItem="JWO-lO-3xd" firstAttribute="height" secondItem="JMk-tt-QVC" secondAttribute="height" id="kpg-rq-SOq"/>
                 <constraint firstItem="JWO-lO-3xd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pUC-NF-9sd"/>
                 <constraint firstAttribute="bottom" secondItem="JWO-lO-3xd" secondAttribute="bottom" id="wXa-iT-MdW"/>
-                <constraint firstItem="JMk-tt-QVC" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.6" constant="-2" id="wat-fw-ed2"/>
                 <constraint firstItem="JWO-lO-3xd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zd8-Ra-tIp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="kpg-rq-SOq"/>
-                    <exclude reference="FIN-ty-EXw"/>
-                    <exclude reference="dc1-Hf-OYD"/>
-                    <exclude reference="wat-fw-ed2"/>
+                    <exclude reference="Aea-Yf-FoE"/>
+                    <exclude reference="LJd-vn-fx8"/>
+                    <exclude reference="O6B-ju-cr5"/>
+                    <exclude reference="UR6-gJ-JZy"/>
+                    <exclude reference="dyT-bX-OdL"/>
                 </mask>
             </variation>
             <connections>

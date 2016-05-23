@@ -10,16 +10,14 @@ import Foundation
 
 class ASCalendarVM: NSObject, ASCalendarNamesM {
     
-    var selectedMonth: Dynamic<(month : Int, year : Int)>!
     var calendarSettings : Dynamic<ASSettingsM>!
     var headerString : Dynamic<String>!
     
     var bodyVM : ASBodyVM!
     var settingM : ASSettingsM!
     
-    init(month : Int, year : Int, settings : ASSettingsM) {
+    init(settings : ASSettingsM) {
         super.init()
-        selectedMonth = Dynamic(month : month, year : year)
         self.calendarSettings = Dynamic(settings)
         self.headerString = Dynamic("")
         self.settingM = settings

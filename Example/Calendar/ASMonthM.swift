@@ -14,7 +14,7 @@ struct ASMonthM {
     var year : Int!
     var weeks : Array<ASWeekM>!
     
-    init(month : Int, year : Int) {
+    init(month : Int, year : Int, settings : ASSettingsM) {
         self.month = month
         self.year = year
         //create a nsdate
@@ -50,6 +50,27 @@ struct ASMonthM {
             currentDay.dayYear = year
             currentDay.dayWeek = weekNumber
             currentDay.dayEnabled = true
+            //check settings
+            if ((year < settings.firstSelectableDate.value.year) ||
+                (year == settings.firstSelectableDate.value.year &&
+                month < settings.firstSelectableDate.value.month) ||
+                (year == settings.firstSelectableDate.value.year &&
+                month == settings.firstSelectableDate.value.month &&
+                i < settings.firstSelectableDate.value.day))
+            {
+                currentDay.daySelectable = false
+            } else if ((year > settings.lastSelectableDate.value.year) ||
+                       (year == settings.lastSelectableDate.value.year &&
+                       month > settings.lastSelectableDate.value.month) ||
+                       (year == settings.lastSelectableDate.value.year &&
+                       month == settings.lastSelectableDate.value.month &&
+                       i > settings.lastSelectableDate.value.day))
+            {
+                currentDay.daySelectable = false
+            } else {
+                currentDay.daySelectable = true
+            }
+            //add
             currentWeek.days[weekDay-1] = currentDay
             //next day
             weekDay += 1

@@ -15,12 +15,14 @@ struct ASDayM {
     var dayWeek : Int!
     var dayNumber : Int!
     var daySelected : Bool!
+    var daySelectable : Bool!
     var dayEnabled : Bool!
     
     init() {
         dayNumber = 0
         daySelected = false
         dayEnabled = false
+        daySelectable = true
         dayYear = 0
         dayMonth = 0
         dayWeek = 0
