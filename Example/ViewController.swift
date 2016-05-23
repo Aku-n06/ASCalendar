@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ASCalendarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +21,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openCalendar(sender : UIButton) {
-        
         let calendar = ASCalendar()
-        calendar.calendarSettings
+        calendar.delegate = self
         calendar.showCalendarAsLayer()
+    }
+    
+    //MARK: calendar delegate
+    
+    func calendarSelect(day: Int, week: Int, month: Int, year: Int) {
+        NSLog("%d-%d-%d (%d)", day, month, year, week)
     }
 }
 

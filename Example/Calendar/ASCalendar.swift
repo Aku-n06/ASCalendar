@@ -8,11 +8,16 @@
 
 import Foundation
 
+protocol ASCalendarDelegate: class {
+    func calendarSelect(day: Int, week: Int, month: Int, year: Int)
+}
+
 class ASCalendar: NSObject {
     
-    var calendarV : ASCalendarV!
-    var calendarSettings : ASSettingsM!
-    var calendarVM : ASCalendarVM!
+    internal var calendarV : ASCalendarV!
+    internal var calendarSettings : ASSettingsM!
+    internal var calendarVM : ASCalendarVM!
+    weak var delegate : ASCalendarDelegate?
     
     override init() {
         super.init()
@@ -22,8 +27,13 @@ class ASCalendar: NSObject {
         let components = calendar.components([.Day , .Month , .Year], fromDate: date)
         let year =  components.year
         let month = components.month
+        //create default settings
         self.calendarSettings = ASSettingsM(month: month, year: year)
+        self.calendarSettings.selectedDay.bind {
+            self.delegate?.calendarSelect($0.dayNumber, week: $0.dayWeek, month: $0.dayMonth, year: $0.dayYear)
+        }
     }
+    
     
     //MARK: public methods
     
@@ -35,6 +45,16 @@ class ASCalendar: NSObject {
         self.calendarV.viewModel = self.calendarVM
     }
     
+    func setcurrentPage(month: Int, year: Int) {
+        self.calendarSettings.selectedMonth.value = (month: month, year: year)
+    }
     
+    func setFirstSelectableDate(day: Int, month: Int, year: Int) {
+        self.calendarSettings.firstSelectableDate.value = (day : day, month : month, year: year)
+    }
+    
+    func setLastSelectableDate(day: Int, month: Int, year: Int) {
+        self.calendarSettings.lastSelectableDate.value = (day : day, month : month, year: year)
+    }
     
 }
