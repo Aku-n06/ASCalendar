@@ -22,10 +22,31 @@ class ASDayV : UIView {
                     self.numberLabel.text = String($0.dayNumber)
                     self.selectionV.hidden = !$0.daySelected
                     if ($0.daySelectable == true) {
-                        self.numberLabel.textColor = UIColor.blackColor()
+                        self.numberLabel.textColor = self.theme.bodyDayActiveTextColor.value
                     } else {
-                        self.numberLabel.textColor = UIColor.grayColor()
+                        self.numberLabel.textColor = self.theme.bodyDayInactiveTextColor.value
                     }
+                }
+            }
+        }
+    }
+    
+    var theme : ASThemeVM! {
+        didSet {
+            theme.bodySelectionColor.bindAndFire {
+                [unowned self] in
+                self.selectionV.backgroundColor = $0
+            }
+            theme.bodyDayActiveTextColor.bind{
+                [unowned self] in
+                if (self.viewModel.dayM.value.daySelectable == true) {
+                    self.numberLabel.textColor = $0
+                }
+            }
+            theme.bodyDayInactiveTextColor.bind{
+                [unowned self] in
+                if (self.viewModel.dayM.value.daySelectable == true) {
+                    self.numberLabel.textColor = $0
                 }
             }
         }

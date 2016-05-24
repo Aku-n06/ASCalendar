@@ -18,6 +18,8 @@ ASCalendarNamesM {
 
     var scrollView : UIScrollView!
     var monthsV = Array<ASMonthV>()
+    var headerV : UIView!
+    var headerLabels = Array<UILabel>()
     
     var viewModel: ASBodyVM? {
         didSet {
@@ -28,6 +30,28 @@ ASCalendarNamesM {
                 self.reloadCell(0)
                 self.reloadCell(1)
                 self.reloadCell(2)
+            }
+        }
+    }
+    
+    var theme : ASThemeVM! {
+        didSet {
+            theme.bodyBackgroundColor.bindAndFire {
+                [unowned self] in
+                self.backgroundColor = $0
+            }
+            theme.bodyHeaderColor.bindAndFire {
+                [unowned self] in
+                self.headerV.backgroundColor = $0
+            }
+            theme.bodyHeaderTextColor.bindAndFire {
+                [unowned self] (color) in
+                self.headerLabels.forEach({ (label) in
+                    label.textColor = color
+                })
+            }
+            monthsV.forEach { (monthV) in
+                monthV.theme = theme 
             }
         }
     }
@@ -43,7 +67,7 @@ ASCalendarNamesM {
         self.addSubview(scrollView)
         self.createMonthBoxes(frame.width, height: frame.height)
         //add header
-        let headerV = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 30))
+        headerV = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 30))
         headerV.backgroundColor = UIColor.grayColor()
         self.addSubview(headerV)
         //show day names label to header
@@ -52,6 +76,8 @@ ASCalendarNamesM {
         for i in 0...6 {
             let dayLabel = UILabel(frame: CGRect(x: CGFloat(i) * dayLabelW, y: 0, width: dayLabelW, height: 30))
             dayLabel.text = weekNames[i]
+            dayLabel.textAlignment = .Center
+            headerLabels.append(dayLabel)
             headerV.addSubview(dayLabel)
         }
     }

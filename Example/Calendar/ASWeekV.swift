@@ -38,6 +38,18 @@ class ASWeekV : UIView {
         }
     }
     
+    var theme : ASThemeVM! {
+        didSet {
+            theme.bodySelectionColor.bindAndFire {
+                [unowned self] in
+                self.selectionV.backgroundColor = $0
+            }
+            self.boxesV.forEach { (boxV) in
+                boxV.theme = theme
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         //add selection view

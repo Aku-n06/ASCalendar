@@ -11,13 +11,13 @@ import UIKit
 class ASMonthV: UIView, ASCalendarNamesM {
     
     var rowsV = Array<ASWeekV>()
-    var monthLabel : UILabel?
+    var monthLabel : UILabel!
     var viewModel : ASMonthVM! {
         didSet {
             self.viewModel.monthM.bindAndFire{
                 [unowned self] in
                 //populate
-                self.monthLabel!.text = self.getMonthNames()[$0.month-1].uppercaseString
+                self.monthLabel.text = self.getMonthNames()[$0.month-1].uppercaseString
                 for i in 0..<self.rowsV.count {
                     //show or hide week
                     self.rowsV[i].hidden = false
@@ -36,6 +36,18 @@ class ASMonthV: UIView, ASCalendarNamesM {
         }
     }
     
+    var theme : ASThemeVM! {
+        didSet {
+            theme.bodyMonthTitleColor.bindAndFire {
+                [unowned self] in
+                self.monthLabel.textColor = $0
+            }
+            rowsV.forEach { (rowV) in
+                rowV.theme = theme
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         //add rows
@@ -48,8 +60,8 @@ class ASMonthV: UIView, ASCalendarNamesM {
         }
         //add month label
         monthLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: 30))
-        monthLabel!.textColor = UIColor.redColor()
-        self.addSubview(monthLabel!)
+        monthLabel.textColor = UIColor.redColor()
+        self.addSubview(monthLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {

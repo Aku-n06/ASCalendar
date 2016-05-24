@@ -42,4 +42,18 @@ class ASCalendarV: UIView {
         }
     }
     
+    var theme : ASThemeVM! {
+        didSet {
+            self.bodyV.theme = theme
+            theme.headerColor.bindAndFire {
+                [unowned self] in
+                self.headerLabel.backgroundColor = $0
+            }
+            theme.headerTextColor.bindAndFire {
+                [unowned self] in
+                self.headerLabel.textColor = $0
+            }
+        }
+    }
+    
 }

@@ -17,6 +17,7 @@ class ASCalendar: NSObject {
     internal var calendarV : ASCalendarV!
     internal var calendarSettings : ASSettingsM!
     internal var calendarVM : ASCalendarVM!
+    var theme = ASThemeVM()
     weak var delegate : ASCalendarDelegate?
     
     override init() {
@@ -41,6 +42,7 @@ class ASCalendar: NSObject {
         calendarLayer.showCalendar()
         self.calendarV = calendarLayer.calendar as! ASCalendarV
         self.calendarVM = ASCalendarVM(settings: self.calendarSettings)
+        self.calendarV.theme = self.theme
         self.calendarV.viewModel = self.calendarVM
     }
     
