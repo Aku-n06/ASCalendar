@@ -15,7 +15,6 @@ struct ASMonthM {
     var weeks : Array<ASWeekM>!
     
     init(month : Int, year : Int, settings : ASSettingsM) {
-        NSLog("  create Month %d %d", month, year)
         self.month = month
         self.year = year
         //create a nsdate
@@ -89,6 +88,5 @@ struct ASMonthM {
         }
         //set new data
         self.weeks = allWeeks
-        NSLog("  create Month")
     }
 }
