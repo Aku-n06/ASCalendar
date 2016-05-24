@@ -69,12 +69,7 @@ class ASMonthV: UIView, ASCalendarNamesM {
         //resize and place rows
         let rowH = (frame.height - 30) / rowCount
         for i in 0..<6 {
-            let rowV = rowsV[i]
-            if (rowV.hidden == false) {
-                rowV.frame = CGRect(x: 0, y: rowH * CGFloat(i) + 30, width: frame.width, height: rowH)
-            } else {
-                rowV.frame = CGRect(x: 0, y: rowH * CGFloat(i) + 30, width: 0, height: rowH)
-            }
+            rowsV[i].frame = CGRect(x: 0, y: rowH * CGFloat(i) + 30, width: frame.width, height: rowH)
         }
     }
     

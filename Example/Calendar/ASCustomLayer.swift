@@ -135,7 +135,7 @@ class ASCustomLayer: UIView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.blackLayer.addGestureRecognizer(tapGesture)
         //load calendar view
-        self.calendar = loadViewFromNib()
+        self.calendar = ASCalendarV.init(frame: CGRect(x: 0, y: 0, width: 250, height: 250))
         self.calendar.alpha = 0
         self.calendar.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.calendar)
@@ -183,13 +183,6 @@ class ASCustomLayer: UIView {
         )
         //apply layout
         self.layoutIfNeeded()
-    }
-    
-    internal func loadViewFromNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "ASCalendarV", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
-        return view
     }
     
     var centerYConstraint : NSLayoutConstraint!

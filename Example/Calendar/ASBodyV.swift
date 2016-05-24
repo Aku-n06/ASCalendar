@@ -16,10 +16,8 @@ UIView,
 UIScrollViewDelegate,
 ASCalendarNamesM {
 
-    @IBOutlet var scrollView : UIScrollView!
+    var scrollView : UIScrollView!
     var monthsV = Array<ASMonthV>()
-    @IBOutlet var dayLabel : Array<UILabel>!
-    var currentIndex = 100
     
     var viewModel: ASBodyVM? {
         didSet {
@@ -34,21 +32,32 @@ ASCalendarNamesM {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        //show day names label
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = UIColor.whiteColor()
+        //add scrollview ans calendar
+        scrollView = UIScrollView(frame: self.bounds)
+        scrollView.delegate = self
+        scrollView.setContentOffset(CGPointMake(0, frame.height), animated: false)
+        scrollView.pagingEnabled = true
+        self.addSubview(scrollView)
+        self.createMonthBoxes(frame.width, height: frame.height)
+        //add header
+        let headerV = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 30))
+        headerV.backgroundColor = UIColor.grayColor()
+        self.addSubview(headerV)
+        //show day names label to header
+        let dayLabelW = frame.width / 7
         let weekNames = self.getWeekNames()
         for i in 0...6 {
-            self.dayLabel[i].text = weekNames[i]
+            let dayLabel = UILabel(frame: CGRect(x: CGFloat(i) * dayLabelW, y: 0, width: dayLabelW, height: 30))
+            dayLabel.text = weekNames[i]
+            headerV.addSubview(dayLabel)
         }
-        //add calendar scroll boxes
-        self.createMonthBoxes(CGFloat(250), height: CGFloat(250 - 40))
     }
     
-    override func layoutSubviews() {
-        self.scrollView.delegate = self
-        self.scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
-        self.scrollView.pagingEnabled = true
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     //MARK: scrollView delegate

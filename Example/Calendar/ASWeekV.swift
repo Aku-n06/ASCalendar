@@ -25,6 +25,7 @@ class ASWeekV : UIView {
                         self.viewModel.getModelForIndex(i, currentViewModel: self.boxesV[i].viewModel)
                     }
                 }
+                self.layoutViews()
             }
             self.viewModel.selectedIndex.bindAndFire {
                 [unowned self] in
@@ -65,9 +66,18 @@ class ASWeekV : UIView {
         super.init(coder: aDecoder)
     }
     
-    //MARK: private methods
+    //MARK: custom layout
     
-    internal func checkSelection() {
-        
+    func layoutViews() {
+        let dayW = frame.width / 7
+        for i in 0..<7 {
+            boxesV[i].frame = CGRect(x: CGFloat(i) * dayW, y: 0, width: dayW, height: frame.height)
+            boxesV[i].layoutViews()
+        }
+        selectionV.frame = CGRect(x: 2, y: 2, width: frame.size.width - 4, height: frame.size.height - 4)
     }
+    
 }
+
+
+

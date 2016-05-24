@@ -11,18 +11,25 @@ import UIKit
 
 class ASCalendarV: UIView {
     
-    @IBOutlet var bodyV : ASBodyContainerV!
-    @IBOutlet var leftBarWidth : NSLayoutConstraint!
-    @IBOutlet var rightBarWidth : NSLayoutConstraint!
-    @IBOutlet var headerLabel : UILabel!
+    var bodyV : ASBodyV!
+    var headerLabel : UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        //hide lateral bars
-        self.leftBarWidth.constant = 0
-        self.rightBarWidth.constant = 0
-        //show current month - year
-        self.headerLabel.text = "CALENDAR"
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        //add calendar header label
+        headerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: 40))
+        headerLabel.backgroundColor = UIColor.redColor()
+        headerLabel.textColor = UIColor.whiteColor()
+        headerLabel.textAlignment = .Center
+        headerLabel.text = "CALENDAR"
+        self.addSubview(headerLabel)
+        //add calendar body
+        bodyV = ASBodyV(frame: CGRect(x: 0, y: 40, width: 250, height: 210))
+        self.addSubview(bodyV)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     var viewModel: ASCalendarVM! {
@@ -31,7 +38,7 @@ class ASCalendarV: UIView {
                 [unowned self] in
                 self.headerLabel.text = $0
             }
-            self.bodyV.view.viewModel = viewModel.bodyVM
+            self.bodyV.viewModel = viewModel.bodyVM
         }
     }
     

@@ -63,4 +63,12 @@ class ASDayV : UIView {
         }
     }
     
+    //MARK: custom layout
+    
+    func layoutViews() {
+        numberLabel.frame = self.bounds
+        selectionV.frame = self.bounds
+        selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
+    }
+    
 }
