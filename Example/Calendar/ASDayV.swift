@@ -10,8 +10,9 @@ import UIKit
 
 class ASDayV : UIView {
     
-    @IBOutlet var numberLabel : UILabel!
-    @IBOutlet var selectionV : UIView!
+    var numberLabel : UILabel!
+    var selectionV : UIView!
+    
     var viewModel : ASDayVM! {
         didSet {
             self.viewModel.dayM.bindAndFire {
@@ -30,8 +31,17 @@ class ASDayV : UIView {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        //add selectionView
+        selectionV = UIView.init(frame: self.bounds)
+        selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
+        self.addSubview(selectionV)
+        //add numberLabel
+        numberLabel = UILabel.init(frame: self.bounds)
+        numberLabel.textAlignment = .Center
+        self.addSubview(numberLabel)
+        //gesture
         let tapGesture  = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         self.addGestureRecognizer(tapGesture)
         self.userInteractionEnabled = true
@@ -43,7 +53,6 @@ class ASDayV : UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
     }
     
     //MARK: user interaction

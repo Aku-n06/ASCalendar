@@ -17,7 +17,7 @@ UIScrollViewDelegate,
 ASCalendarNamesM {
 
     @IBOutlet var scrollView : UIScrollView!
-    @IBOutlet var monthBoxesViews : Array<ASMonthBoxV>!
+    var monthsV = Array<ASMonthV>()
     @IBOutlet var dayLabel : Array<UILabel>!
     var currentIndex = 100
     
@@ -41,6 +41,8 @@ ASCalendarNamesM {
         for i in 0...6 {
             self.dayLabel[i].text = weekNames[i]
         }
+        //add calendar scroll boxes
+        self.createMonthBoxes(CGFloat(250), height: CGFloat(250 - 40))
     }
     
     override func layoutSubviews() {
@@ -48,7 +50,6 @@ ASCalendarNamesM {
         self.scrollView.setContentOffset(CGPointMake(0, self.frame.height), animated: false)
         self.scrollView.pagingEnabled = true
     }
-
     
     //MARK: scrollView delegate
     
@@ -66,15 +67,23 @@ ASCalendarNamesM {
     
     internal func reloadCell(index : Int) {
         if (self.viewModel != nil) {
-            let cell = self.monthBoxesViews[index].view
+            let cell = self.monthsV[index]
             if (cell.viewModel == nil) {
-                
                 let viewModel = self.viewModel!.getViewModelForRow(index, currentViewModel: nil)
                 cell.viewModel = viewModel
             } else {
                 self.viewModel!.getViewModelForRow(index, currentViewModel: cell.viewModel)
             }
         }
+    }
+    
+    internal func createMonthBoxes(width : CGFloat, height : CGFloat) {
+        for i in 0..<3 {
+            let monthV =  ASMonthV.init(frame: CGRectMake(0, height * CGFloat(i), width, height))
+            scrollView.addSubview(monthV)
+            monthsV.append(monthV)
+        }
+        self.scrollView.contentSize = CGSize(width: width, height: height * 3)
     }
     
 }

@@ -11,18 +11,18 @@ import UIKit
 
 class ASWeekV : UIView {
     
-    @IBOutlet var boxesV : Array<ASWeekBoxV>!
-    @IBOutlet var selectionV : UIView!
+    var boxesV : Array<ASDayV>!
+    var selectionV : UIView!
     var viewModel : ASWeekVM! {
         didSet {
             self.viewModel.weekM.bindAndFire {
                 [unowned self] in
                 _ = $0
                 for i in 0..<7 {
-                    if (self.boxesV[i].view.viewModel == nil) {
-                        self.boxesV[i].view.viewModel = self.viewModel.getModelForIndex(i, currentViewModel: nil)
+                    if (self.boxesV[i].viewModel == nil) {
+                        self.boxesV[i].viewModel = self.viewModel.getModelForIndex(i, currentViewModel: nil)
                     } else {
-                        self.viewModel.getModelForIndex(i, currentViewModel: self.boxesV[i].view.viewModel)
+                        self.viewModel.getModelForIndex(i, currentViewModel: self.boxesV[i].viewModel)
                     }
                 }
             }
@@ -34,6 +34,22 @@ class ASWeekV : UIView {
                 }
                 self.selectionV.hidden = true
             }
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        //add selection view
+        selectionV = UIView(frame: CGRect(x: 2, y: 2, width: frame.size.width - 4, height: frame.size.height - 4))
+        selectionV.backgroundColor = UIColor.redColor()
+        self.addSubview(selectionV)
+        //add day views
+        boxesV = Array<ASDayV>()
+        let dayW = frame.width / 7
+        for i in 0..<7 {
+            let dayV = ASDayV(frame: CGRect(x: CGFloat(i) * dayW, y: 0, width: dayW, height: frame.height))
+            self.boxesV.append(dayV)
+            self.addSubview(dayV)
         }
     }
     
