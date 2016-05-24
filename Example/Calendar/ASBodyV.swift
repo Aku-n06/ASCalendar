@@ -63,6 +63,7 @@ ASCalendarNamesM {
         scrollView = UIScrollView(frame: self.bounds)
         scrollView.delegate = self
         scrollView.setContentOffset(CGPointMake(0, frame.height), animated: false)
+        scrollView.showsVerticalScrollIndicator = false
         scrollView.pagingEnabled = true
         self.addSubview(scrollView)
         self.createMonthBoxes(frame.width, height: frame.height)

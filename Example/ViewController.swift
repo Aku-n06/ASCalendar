@@ -32,4 +32,3 @@ class ViewController: UIViewController, ASCalendarDelegate {
         NSLog("%d-%d-%d (%d)", day, month, year, week)
     }
 }
-
