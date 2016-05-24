@@ -25,7 +25,6 @@ class ASWeekV : UIView {
                         self.viewModel.getModelForIndex(i, currentViewModel: self.boxesV[i].viewModel)
                     }
                 }
-                self.layoutViews()
             }
             self.viewModel.selectedIndex.bindAndFire {
                 [unowned self] in
@@ -66,10 +65,6 @@ class ASWeekV : UIView {
         }
     }
     
-    override func layoutSubviews() {
-        self.selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -90,6 +85,3 @@ class ASWeekV : UIView {
     }
     
 }
-
-
-

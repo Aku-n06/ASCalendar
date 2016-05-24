@@ -91,5 +91,5 @@ class ASDayV : UIView {
         selectionV.frame = self.bounds
         selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
     }
-    
+ 
 }

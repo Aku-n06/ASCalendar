@@ -13,6 +13,7 @@ class ASCalendarV: UIView {
     
     var bodyV : ASBodyV!
     var headerLabel : UILabel!
+    var headerSeparatorV : UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +24,9 @@ class ASCalendarV: UIView {
         headerLabel.textAlignment = .Center
         headerLabel.text = "CALENDAR"
         self.addSubview(headerLabel)
+        //add separator to header
+        headerSeparatorV = UIView(frame: CGRect(x: 0, y: 39, width: frame.width, height: 1))
+        headerLabel.addSubview(headerSeparatorV)
         //add calendar body
         bodyV = ASBodyV(frame: CGRect(x: 0, y: 40, width: 250, height: 210))
         self.addSubview(bodyV)
@@ -52,6 +56,10 @@ class ASCalendarV: UIView {
             theme.headerTextColor.bindAndFire {
                 [unowned self] in
                 self.headerLabel.textColor = $0
+            }
+            theme.headerSeparatorColor.bindAndFire {
+                [unowned self] in
+                self.headerSeparatorV.backgroundColor = $0
             }
         }
     }

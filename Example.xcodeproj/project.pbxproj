@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C3C83A41CF48C1400F833B8 /* ASThemeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C83A31CF48C1400F833B8 /* ASThemeVM.swift */; };
 		9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2101B1CEC9E93002061C3 /* AppDelegate.swift */; };
 		9CA2101E1CEC9E93002061C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA2101D1CEC9E93002061C3 /* ViewController.swift */; };
 		9CA210211CEC9E93002061C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2101F1CEC9E93002061C3 /* Main.storyboard */; };
@@ -31,10 +30,10 @@
 		9CA210721CEF1417002061C3 /* ASMonthCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */; };
 		9CA210741CEF3AE7002061C3 /* ASWeekVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210731CEF3AE7002061C3 /* ASWeekVM.swift */; };
 		9CA210761CEF3E15002061C3 /* ASDayVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA210751CEF3E15002061C3 /* ASDayVM.swift */; };
+		9CE3F7631CF49E6000C3CFE6 /* ASThemeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE3F7621CF49E6000C3CFE6 /* ASThemeVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C3C83A31CF48C1400F833B8 /* ASThemeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASThemeVM.swift; sourceTree = "<group>"; };
 		9CA210181CEC9E93002061C3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA2101B1CEC9E93002061C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA2101D1CEC9E93002061C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASMonthCellVM.swift; path = Calendar/ASMonthCellVM.swift; sourceTree = "<group>"; };
 		9CA210731CEF3AE7002061C3 /* ASWeekVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASWeekVM.swift; path = Calendar/ASWeekVM.swift; sourceTree = "<group>"; };
 		9CA210751CEF3E15002061C3 /* ASDayVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ASDayVM.swift; path = Calendar/ASDayVM.swift; sourceTree = "<group>"; };
+		9CE3F7621CF49E6000C3CFE6 /* ASThemeVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASThemeVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,7 @@
 				9CA210711CEF1417002061C3 /* ASMonthCellVM.swift */,
 				9CA210731CEF3AE7002061C3 /* ASWeekVM.swift */,
 				9CA210751CEF3E15002061C3 /* ASDayVM.swift */,
-				9C3C83A31CF48C1400F833B8 /* ASThemeVM.swift */,
+				9CE3F7621CF49E6000C3CFE6 /* ASThemeVM.swift */,
 			);
 			name = VM;
 			sourceTree = "<group>";
@@ -265,6 +265,7 @@
 				9CA2105E1CEDB42F002061C3 /* ASMonthM.swift in Sources */,
 				9CA210611CEDB4B0002061C3 /* ASWeekM.swift in Sources */,
 				9CA2106C1CEE10E1002061C3 /* ASCalendarNamesM.swift in Sources */,
+				9CE3F7631CF49E6000C3CFE6 /* ASThemeVM.swift in Sources */,
 				9CA2105C1CEDB20D002061C3 /* ASCalendarVM.swift in Sources */,
 				9CA210371CECA4C3002061C3 /* ASCalendarV.swift in Sources */,
 				9CA2103A1CECB4C1002061C3 /* ASBodyV.swift in Sources */,
@@ -274,7 +275,6 @@
 				9CA210631CEDB58D002061C3 /* ASDayM.swift in Sources */,
 				9CA2101C1CEC9E93002061C3 /* AppDelegate.swift in Sources */,
 				9CA210761CEF3E15002061C3 /* ASDayVM.swift in Sources */,
-				9C3C83A41CF48C1400F833B8 /* ASThemeVM.swift in Sources */,
 				9CA2106E1CEF00C2002061C3 /* ASSettingsM.swift in Sources */,
 				9CA210741CEF3AE7002061C3 /* ASWeekVM.swift in Sources */,
 			);

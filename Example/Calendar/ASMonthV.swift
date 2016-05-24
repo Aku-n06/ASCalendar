@@ -12,6 +12,7 @@ class ASMonthV: UIView, ASCalendarNamesM {
     
     var rowsV = Array<ASWeekV>()
     var monthLabel : UILabel!
+    var separatorV : UIView!
     var viewModel : ASMonthVM! {
         didSet {
             self.viewModel.monthM.bindAndFire{
@@ -31,7 +32,7 @@ class ASMonthV: UIView, ASCalendarNamesM {
                         }
                     }
                 }
-                self.layoutRows()
+                self.layoutViews()
             }
         }
     }
@@ -42,6 +43,10 @@ class ASMonthV: UIView, ASCalendarNamesM {
                 [unowned self] in
                 self.monthLabel.textColor = $0
             }
+            theme.bodySeparatorColor.bindAndFire {
+                [unowned self] in
+                self.separatorV.backgroundColor = $0
+            }
             rowsV.forEach { (rowV) in
                 rowV.theme = theme
             }
@@ -50,6 +55,13 @@ class ASMonthV: UIView, ASCalendarNamesM {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        //add separator
+        separatorV = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 1))
+        self.addSubview(separatorV)
+        //add month label
+        monthLabel = UILabel(frame: CGRect(x: 10, y: 0, width: frame.width - 20, height: 30))
+        monthLabel.textColor = UIColor.redColor()
+        self.addSubview(monthLabel)
         //add rows
         let rowH = (frame.height - 30) / 6
         super.awakeFromNib()
@@ -58,10 +70,6 @@ class ASMonthV: UIView, ASCalendarNamesM {
             self.addSubview(rowV)
             self.rowsV.append(rowV)
         }
-        //add month label
-        monthLabel = UILabel(frame: CGRect(x: 0, y: 0, width: frame.width, height: 30))
-        monthLabel.textColor = UIColor.redColor()
-        self.addSubview(monthLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,7 +78,7 @@ class ASMonthV: UIView, ASCalendarNamesM {
     
     //MARK: private methods
     
-    internal func layoutRows() {
+    internal func layoutViews() {
         //count active rows
         var rowCount : CGFloat = 0
         rowsV.forEach { (rowV) in
@@ -82,6 +90,7 @@ class ASMonthV: UIView, ASCalendarNamesM {
         let rowH = (frame.height - 30) / rowCount
         for i in 0..<6 {
             rowsV[i].frame = CGRect(x: 0, y: rowH * CGFloat(i) + 30, width: frame.width, height: rowH)
+            rowsV[i].layoutViews()
         }
     }
     
