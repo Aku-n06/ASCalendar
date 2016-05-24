@@ -34,7 +34,6 @@ class ASCalendar: NSObject {
         }
     }
     
-    
     //MARK: public methods
     
     func showCalendarAsLayer() {

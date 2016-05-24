@@ -23,12 +23,10 @@ ASCalendarNamesM {
     
     var viewModel: ASBodyVM? {
         didSet {
-            self.reloadCell(0)
-            self.reloadCell(1)
-            self.reloadCell(2)
             self.viewModel?.settingsM.selectedMonth.bindAndFire{
                 [unowned self] in
                 _ = $0
+                
                 self.reloadCell(0)
                 self.reloadCell(1)
                 self.reloadCell(2)
@@ -70,7 +68,9 @@ ASCalendarNamesM {
         if (self.viewModel != nil) {
             let cell = self.monthBoxesViews[index].view
             if (cell.viewModel == nil) {
-                cell.viewModel = self.viewModel!.getViewModelForRow(index, currentViewModel: nil)
+                
+                let viewModel = self.viewModel!.getViewModelForRow(index, currentViewModel: nil)
+                cell.viewModel = viewModel
             } else {
                 self.viewModel!.getViewModelForRow(index, currentViewModel: cell.viewModel)
             }
