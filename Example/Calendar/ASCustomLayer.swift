@@ -196,7 +196,7 @@ class ASCustomLayer: UIView {
         }
     }
     
-    internal func closingAnimations() {
+    func closingAnimations() {
         UIView.animateWithDuration(0.2, animations: {
             self.blackLayer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
             self.calendar.alpha = 0

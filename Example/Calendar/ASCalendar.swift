@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ASCalendarDelegate: class {
     func calendarSelect(day: Int, week: Int, month: Int, year: Int)
@@ -29,33 +30,125 @@ class ASCalendar: NSObject {
         let year =  components.year
         let month = components.month
         //create default settings
-        self.calendarSettings = ASSettingsM(month: month, year: year)
-        self.calendarSettings.selectedDay.bind {
+        calendarSettings = ASSettingsM(month: month, year: year)
+        calendarSettings.selectedDay.bind {
+            [unowned self] in
             self.delegate?.calendarSelect($0.dayNumber, week: $0.dayWeek, month: $0.dayMonth, year: $0.dayYear)
         }
     }
     
-    //MARK: public methods
+    //MARK: presentation public methods
+    
+    var calendarLayer : ASCustomLayer!
     
     func showCalendarAsLayer() {
-        let calendarLayer = ASCustomLayer()
+        calendarLayer = ASCustomLayer()
         calendarLayer.showCalendar()
-        self.calendarV = calendarLayer.calendar as! ASCalendarV
-        self.calendarVM = ASCalendarVM(settings: self.calendarSettings)
-        self.calendarV.theme = self.theme
-        self.calendarV.viewModel = self.calendarVM
+        calendarV = calendarLayer.calendar as! ASCalendarV
+        calendarVM = ASCalendarVM(settings: self.calendarSettings)
+        calendarV.theme = theme
+        calendarV.viewModel = calendarVM
     }
     
+    func hideCalendar() {
+        calendarLayer.closingAnimations()
+    }
+    
+    //MARK: settings public methods
+    
     func setcurrentPage(month: Int, year: Int) {
-        self.calendarSettings.selectedMonth.value = (month: month, year: year)
+        calendarSettings.selectedMonth.value = (month: month, year: year)
     }
     
     func setFirstSelectableDate(day: Int, month: Int, year: Int) {
-        self.calendarSettings.firstSelectableDate.value = (day : day, month : month, year: year)
+        calendarSettings.firstSelectableDate.value = (day : day, month : month, year: year)
     }
     
     func setLastSelectableDate(day: Int, month: Int, year: Int) {
-        self.calendarSettings.lastSelectableDate.value = (day : day, month : month, year: year)
+        calendarSettings.lastSelectableDate.value = (day : day, month : month, year: year)
+    }
+    
+    func setSelectedDay(day: Int, month: Int, year: Int) {
+        let selectedDay = ASDayM(day: day, month: month, year: year)
+        calendarSettings.selectedDay.value = selectedDay
+    }
+    
+    func setSelectionStyle(style : BodySelectionStyle) {
+        calendarSettings.selectionStyle.value = style
+    }
+    
+    //MARK: theme public methods
+    
+    func configureHeader(backgroundColor: UIColor?, textColor: UIColor?, textFont : UIFont?, separationLineColor: UIColor?) {
+        if (backgroundColor != nil) {
+            theme.headerColor.value = backgroundColor!
+        }
+        if (textColor != nil) {
+            theme.headerTextColor.value = textColor!
+        }
+        if (textFont != nil) {
+            theme.headerTextFont.value = textFont!
+        }
+        if (separationLineColor != nil) {
+            theme.headerSeparatorColor.value = separationLineColor!
+        }
+    }
+    
+    func configureBodyHeader(backgroundColor: UIColor?, textColor: UIColor?, textFont: UIFont?, separationLineColor: UIColor?) {
+        if (backgroundColor != nil) {
+            theme.bodyBackgroundColor.value = backgroundColor!
+        }
+        if (textColor != nil) {
+            theme.bodyHeaderTextColor.value = textColor!
+        }
+        if (textFont != nil) {
+            theme.bodyHeaderTextFont.value = textFont!
+        }
+        if (separationLineColor != nil) {
+            theme.bodySeparatorColor.value = separationLineColor!
+        }
+    }
+    
+    func configureBody(backgroundColor: UIColor?, monthTextColor: UIColor?, monthTextFont: UIFont?, separationLineColor: UIColor?) {
+        if (backgroundColor != nil) {
+            theme.bodyHeaderColor.value = backgroundColor!
+        }
+        if (monthTextColor != nil) {
+            theme.bodyMonthTitleColor.value = monthTextColor!
+        }
+        if (monthTextFont != nil) {
+            theme.bodyMonthTextFont.value = monthTextFont!
+        }
+        if (separationLineColor != nil) {
+            theme.bodySeparatorColor.value = separationLineColor!
+        }
+    }
+    
+    func configureDay(selectableTextColor: UIColor?, unselectableTextColor: UIColor?, selectedTextColor: UIColor?, TextFont: UIFont?) {
+        if (selectableTextColor != nil) {
+            theme.bodyDayActiveTextColor.value = selectableTextColor!
+        }
+        if (unselectableTextColor != nil) {
+            theme.bodyDayInactiveTextColor.value = unselectableTextColor!
+        }
+        if (selectedTextColor != nil) {
+            theme.bodyDaySelectedTextColor.value = selectedTextColor!
+        }
+        if (TextFont != nil) {
+            theme.bodyDayTextFont.value = TextFont!
+        }
+    }
+    
+    func configureSelections(selectionColor: UIColor?, daySelectionSize: CGFloat?, weekSelectionHeight: CGFloat?) {
+        if (selectionColor != nil) {
+            theme.bodySelectionColor.value = selectionColor!
+        }
+        if (daySelectionSize != nil) {
+            theme.daySelectionSize.value = daySelectionSize!
+        }
+        if (weekSelectionHeight != nil) {
+            theme.weekSelectionSize.value = weekSelectionHeight!
+        }
     }
     
 }

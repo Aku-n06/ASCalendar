@@ -23,6 +23,7 @@ class ViewController: UIViewController, ASCalendarDelegate {
     @IBAction func openCalendar(sender : UIButton) {
         let calendar = ASCalendar()
         calendar.delegate = self
+        calendar.setSelectedDay(25, month: 5, year: 2016)
         calendar.showCalendarAsLayer()
     }
     
