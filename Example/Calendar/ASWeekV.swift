@@ -18,6 +18,20 @@ class ASWeekV : UIView {
             self.viewModel.weekM.bindAndFire {
                 [unowned self] in
                 _ = $0
+                if (self.viewModel.selectedIndex.value == 99) {//select entire row
+                    self.selectionV.hidden = false
+                    //set days as selected
+                    for i in 0..<7 {
+                        if (self.boxesV[i].viewModel == nil) {
+                            self.boxesV[i].viewModel = self.viewModel.getModelSelectedForIndex(i, currentViewModel: nil)
+                        } else {
+                            self.viewModel.getModelSelectedForIndex(i, currentViewModel: self.boxesV[i].viewModel)
+                        }
+                    }
+                    return
+                }
+                self.selectionV.hidden = true
+                //set days as deselected
                 for i in 0..<7 {
                     if (self.boxesV[i].viewModel == nil) {
                         self.boxesV[i].viewModel = self.viewModel.getModelForIndex(i, currentViewModel: nil)
@@ -25,15 +39,30 @@ class ASWeekV : UIView {
                         self.viewModel.getModelForIndex(i, currentViewModel: self.boxesV[i].viewModel)
                     }
                 }
-                self.layoutViews()
             }
             self.viewModel.selectedIndex.bindAndFire {
                 [unowned self] in
                 if ($0 == 99) {//select entire row
                     self.selectionV.hidden = false
+                    //set days as selected
+                    for i in 0..<7 {
+                        if (self.boxesV[i].viewModel == nil) {
+                            self.boxesV[i].viewModel = self.viewModel.getModelSelectedForIndex(i, currentViewModel: nil)
+                        } else {
+                            self.viewModel.getModelSelectedForIndex(i, currentViewModel: self.boxesV[i].viewModel)
+                        }
+                    }
                     return
                 }
                 self.selectionV.hidden = true
+                //set days as deselected
+                for i in 0..<7 {
+                    if (self.boxesV[i].viewModel == nil) {
+                        self.boxesV[i].viewModel = self.viewModel.getModelForIndex(i, currentViewModel: nil)
+                    } else {
+                        self.viewModel.getModelForIndex(i, currentViewModel: self.boxesV[i].viewModel)
+                    }
+                }
             }
         }
     }
@@ -44,6 +73,7 @@ class ASWeekV : UIView {
                 [unowned self] in
                 self.selectionV.backgroundColor = $0
             }
+            //set theme vm to cell views
             self.boxesV.forEach { (boxV) in
                 boxV.theme = theme
             }
@@ -66,10 +96,6 @@ class ASWeekV : UIView {
         }
     }
     
-    override func layoutSubviews() {
-        self.selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -90,6 +116,3 @@ class ASWeekV : UIView {
     }
     
 }
-
-
-

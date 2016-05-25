@@ -26,6 +26,9 @@ class ASDayV : UIView {
                     } else {
                         self.numberLabel.textColor = self.theme.bodyDayInactiveTextColor.value
                     }
+                    if ($0.daySelected == true) {
+                        self.numberLabel.textColor = self.theme.bodyDaySelectedTextColor.value
+                    }
                 }
             }
         }
@@ -49,13 +52,23 @@ class ASDayV : UIView {
                     self.numberLabel.textColor = $0
                 }
             }
+            theme.bodyDaySelectedTextColor.bind{
+                [unowned self] in
+                if (self.viewModel.dayM.value.daySelected == true) {
+                    self.numberLabel.textColor = $0
+                }
+            }
+            theme.bodyDayTextFont.bindAndFire {
+                [unowned self] in
+                self.numberLabel.font = $0
+            }
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         //add selectionView
-        selectionV = UIView.init(frame: self.bounds)
+        selectionV = UIView.init(frame: CGRect(x: 2, y: 2, width: frame.width - 4, height: frame.height - 4))
         selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
         self.addSubview(selectionV)
         //add numberLabel
@@ -88,8 +101,8 @@ class ASDayV : UIView {
     
     func layoutViews() {
         numberLabel.frame = self.bounds
-        selectionV.frame = self.bounds
+        selectionV.frame = CGRect(x: 2, y: 2, width: frame.width - 4, height: frame.height - 4)
         selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
     }
-    
+ 
 }

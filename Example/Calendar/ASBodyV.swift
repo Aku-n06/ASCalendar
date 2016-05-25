@@ -19,6 +19,7 @@ ASCalendarNamesM {
     var scrollView : UIScrollView!
     var monthsV = Array<ASMonthV>()
     var headerV : UIView!
+    var headerSeparatorV : UIView!
     var headerLabels = Array<UILabel>()
     
     var viewModel: ASBodyVM? {
@@ -50,8 +51,19 @@ ASCalendarNamesM {
                     label.textColor = color
                 })
             }
+            theme.bodyHeaderSeparatorColor.bindAndFire {
+                [unowned self] in
+                self.headerSeparatorV.backgroundColor = $0
+            }
+            theme.bodyHeaderTextFont.bindAndFire {
+                [unowned self] (font) in
+                self.headerLabels.forEach({ (label) in
+                    label.font = font
+                })
+            }
+            //set theme vm to month views
             monthsV.forEach { (monthV) in
-                monthV.theme = theme 
+                monthV.theme = theme
             }
         }
     }
@@ -81,6 +93,9 @@ ASCalendarNamesM {
             headerLabels.append(dayLabel)
             headerV.addSubview(dayLabel)
         }
+        //add separator to header
+        headerSeparatorV = UIView(frame: CGRect(x: 0, y: 29, width: frame.width, height: 1))
+        headerV.addSubview(headerSeparatorV)
     }
     
     required init?(coder aDecoder: NSCoder) {
