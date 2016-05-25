@@ -13,16 +13,18 @@ struct ASWeekM {
     var weekNumber : Int!
     var weekYear : Int!
     var weekMonth : Int!
+    var weekSelected : Bool!
     var days : Array<ASDayM>!
     
     init() {
         //create disabled days
+        weekSelected = false
         var allDays = Array<ASDayM>()
         for _ in 0...6 {
             let day = ASDayM()
             allDays.append(day)
         }
-        self.days = allDays
+        days = allDays
     }
     
 }

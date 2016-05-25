@@ -27,10 +27,14 @@ ASCalendarNamesM {
             self.viewModel?.settingsM.selectedMonth.bindAndFire{
                 [unowned self] in
                 _ = $0
-                
                 self.reloadCell(0)
                 self.reloadCell(1)
                 self.reloadCell(2)
+            }
+            self.viewModel?.settingsM.selectedDay.bind {
+                [unowned self] in
+                _ = $0
+                self.reloadCell(1)
             }
         }
     }

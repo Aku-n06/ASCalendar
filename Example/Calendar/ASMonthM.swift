@@ -50,7 +50,7 @@ struct ASMonthM {
             currentDay.dayYear = year
             currentDay.dayWeek = weekNumber
             currentDay.dayEnabled = true
-            //check settings
+            //check settings (active or inactive days)
             if ((year < settings.firstSelectableDate.value.year) ||
                 (year == settings.firstSelectableDate.value.year &&
                 month < settings.firstSelectableDate.value.month) ||
@@ -69,6 +69,25 @@ struct ASMonthM {
                 currentDay.daySelectable = false
             } else {
                 currentDay.daySelectable = true
+            }
+            //check settings (selected days)
+            currentDay.daySelected = false
+            switch settings.selectionStyle.value {
+            case .Day :
+                if (year == settings.selectedDay.value.dayYear &&
+                    month == settings.selectedDay.value.dayMonth &&
+                    i == settings.selectedDay.value.dayNumber)
+                {
+                    currentDay.daySelected = true
+                }
+            case .Week :
+                if (year == settings.selectedDay.value.dayYear &&
+                    month == settings.selectedDay.value.dayMonth &&
+                    weekNumber == settings.selectedDay.value.dayWeek)
+                {
+                    currentDay.daySelected = true
+                    currentWeek.weekSelected = true
+                }
             }
             //add
             currentWeek.days[weekDay-1] = currentDay

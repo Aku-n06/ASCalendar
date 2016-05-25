@@ -17,45 +17,8 @@ class ASWeekV : UIView {
         didSet {
             self.viewModel.weekM.bindAndFire {
                 [unowned self] in
-                _ = $0
-                if (self.viewModel.selectedIndex.value == 99) {//select entire row
-                    self.selectionV.hidden = false
-                    //set days as selected
-                    for i in 0..<7 {
-                        if (self.boxesV[i].viewModel == nil) {
-                            self.boxesV[i].viewModel = self.viewModel.getModelSelectedForIndex(i, currentViewModel: nil)
-                        } else {
-                            self.viewModel.getModelSelectedForIndex(i, currentViewModel: self.boxesV[i].viewModel)
-                        }
-                    }
-                    return
-                }
-                self.selectionV.hidden = true
-                //set days as deselected
-                for i in 0..<7 {
-                    if (self.boxesV[i].viewModel == nil) {
-                        self.boxesV[i].viewModel = self.viewModel.getModelForIndex(i, currentViewModel: nil)
-                    } else {
-                        self.viewModel.getModelForIndex(i, currentViewModel: self.boxesV[i].viewModel)
-                    }
-                }
-            }
-            self.viewModel.selectedIndex.bindAndFire {
-                [unowned self] in
-                if ($0 == 99) {//select entire row
-                    self.selectionV.hidden = false
-                    //set days as selected
-                    for i in 0..<7 {
-                        if (self.boxesV[i].viewModel == nil) {
-                            self.boxesV[i].viewModel = self.viewModel.getModelSelectedForIndex(i, currentViewModel: nil)
-                        } else {
-                            self.viewModel.getModelSelectedForIndex(i, currentViewModel: self.boxesV[i].viewModel)
-                        }
-                    }
-                    return
-                }
-                self.selectionV.hidden = true
-                //set days as deselected
+                self.selectionV.hidden = !$0.weekSelected
+                //update viewmodel for each day box
                 for i in 0..<7 {
                     if (self.boxesV[i].viewModel == nil) {
                         self.boxesV[i].viewModel = self.viewModel.getModelForIndex(i, currentViewModel: nil)
