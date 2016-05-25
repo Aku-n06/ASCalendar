@@ -27,7 +27,7 @@ class ASSettingsM : NSObject {
     init(month : Int, year : Int) {
         super.init()
         self.selectedMonth = Dynamic((month : month, year: year))
-        self.selectionStyle = Dynamic(.Week)
+        self.selectionStyle = Dynamic(.Day)
         self.selectedDay = Dynamic(ASDayM())//no selection
         let start = (day : 1, month : 1, year: year - 1000)
         self.firstSelectableDate = Dynamic(start)

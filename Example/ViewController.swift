@@ -23,7 +23,7 @@ class ViewController: UIViewController, ASCalendarDelegate {
     @IBAction func openCalendar(sender : UIButton) {
         let calendar = ASCalendar()
         calendar.delegate = self
-        calendar.calendarSettings.selectionStyle.value = .Day
+        calendar.theme.daySelectionSize.value = 100
         calendar.showCalendarAsLayer()
     }
     

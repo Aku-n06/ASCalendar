@@ -36,6 +36,10 @@ class ASWeekV : UIView {
                 [unowned self] in
                 self.selectionV.backgroundColor = $0
             }
+            theme.weekSelectionSize.bindAndFire {
+                [unowned self] in
+                self.selectionV.frame = CGRectMake(0, 0, self.frame.size.width - 4, $0)
+            }
             //set theme vm to cell views
             self.boxesV.forEach { (boxV) in
                 boxV.theme = theme
@@ -46,7 +50,8 @@ class ASWeekV : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         //add selection view
-        selectionV = UIView(frame: CGRect(x: 2, y: 2, width: frame.size.width - 4, height: frame.size.height - 4))
+        selectionV = UIView(frame: CGRectMake(0, 0, self.frame.size.width - 4, 32))
+        selectionV.center = CGPoint(x: frame.width/2, y: frame.height/2)
         selectionV.backgroundColor = UIColor.redColor()
         self.addSubview(selectionV)
         //add day views
@@ -75,7 +80,7 @@ class ASWeekV : UIView {
             boxesV[i].frame = CGRect(x: CGFloat(i) * dayW, y: 0, width: dayW, height: frame.height)
             boxesV[i].layoutViews()
         }
-        selectionV.frame = CGRect(x: 2, y: 2, width: frame.size.width - 4, height: frame.size.height - 4)
+        selectionV.center = CGPoint(x: frame.width/2, y: frame.height/2)
     }
     
 }

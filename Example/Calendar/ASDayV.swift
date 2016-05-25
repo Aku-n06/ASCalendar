@@ -62,13 +62,19 @@ class ASDayV : UIView {
                 [unowned self] in
                 self.numberLabel.font = $0
             }
+            theme.daySelectionSize.bindAndFire {
+                [unowned self] in
+                self.selectionV.frame = CGRectMake(0, 0, $0, $0)
+                self.selectionV.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
+            }
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         //add selectionView
-        selectionV = UIView.init(frame: CGRect(x: 2, y: 2, width: frame.width - 4, height: frame.height - 4))
+        selectionV = UIView.init(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        selectionV.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
         selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
         self.addSubview(selectionV)
         //add numberLabel
@@ -101,7 +107,7 @@ class ASDayV : UIView {
     
     func layoutViews() {
         numberLabel.frame = self.bounds
-        selectionV.frame = CGRect(x: 2, y: 2, width: frame.width - 4, height: frame.height - 4)
+        selectionV.center = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
         selectionV.layer.cornerRadius = self.selectionV.frame.size.height/2
     }
  
