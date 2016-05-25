@@ -32,7 +32,6 @@ class ASCalendar: NSObject {
         //create default settings
         calendarSettings = ASSettingsM(month: month, year: year)
         calendarSettings.selectedDay.bind {
-            [unowned self] in
             self.delegate?.calendarSelect($0.dayNumber, week: $0.dayWeek, month: $0.dayMonth, year: $0.dayYear)
         }
     }

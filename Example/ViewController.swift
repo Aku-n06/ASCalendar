@@ -20,13 +20,12 @@ class ViewController: UIViewController, ASCalendarDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func openCalendar(sender : UIButton) {
+    @IBAction func openDefault(sender : UIButton) {
         let calendar = ASCalendar()
         calendar.delegate = self
-        calendar.setSelectedDay(25, month: 5, year: 2016)
         calendar.showCalendarAsLayer()
     }
-    
+
     //MARK: calendar delegate
     
     func calendarSelect(day: Int, week: Int, month: Int, year: Int) {
