@@ -31,8 +31,8 @@ class ASThemeVM : NSObject {
     var bodySelectionColor = Dynamic(UIColor(red:1.00, green:0.16, blue:0.15, alpha:1.00)) //colore della selezione
     var bodyDayTextFont = Dynamic(UIFont (name: "Helvetica", size: 14))// font del numero del giorno
     
-    var daySelectionSize = Dynamic(CGFloat(32))
-    var weekSelectionSize = Dynamic(CGFloat(32))
+    var daySelectionSize = Dynamic(CGFloat(30))
+    var weekSelectionSize = Dynamic(CGFloat(30))
     override init() {
         super.init()
     }
