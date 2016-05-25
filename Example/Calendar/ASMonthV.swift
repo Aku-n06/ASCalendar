@@ -47,6 +47,11 @@ class ASMonthV: UIView, ASCalendarNamesM {
                 [unowned self] in
                 self.separatorV.backgroundColor = $0
             }
+            theme.bodyMonthTextFont.bindAndFire {
+                [unowned self] in
+                self.monthLabel.font = $0
+            }
+            //set theme vm to row views
             rowsV.forEach { (rowV) in
                 rowV.theme = theme
             }

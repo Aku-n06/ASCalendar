@@ -55,8 +55,15 @@ ASCalendarNamesM {
                 [unowned self] in
                 self.headerSeparatorV.backgroundColor = $0
             }
+            theme.bodyHeaderTextFont.bindAndFire {
+                [unowned self] (font) in
+                self.headerLabels.forEach({ (label) in
+                    label.font = font
+                })
+            }
+            //set theme vm to month views
             monthsV.forEach { (monthV) in
-                monthV.theme = theme 
+                monthV.theme = theme
             }
         }
     }

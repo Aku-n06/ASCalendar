@@ -38,6 +38,18 @@ class ASWeekVM : NSObject {
         return ASDayVM(settings: self.settingsM, day: day)
     }
     
+    func getModelSelectedForIndex(index : Int, currentViewModel : ASDayVM?) -> ASDayVM? {
+        var day = self.weekM.value.days[index]
+        day.daySelected = true
+        if (currentViewModel != nil) {
+            currentViewModel?.dayM.value = day
+            return nil
+        }
+        let dayVM = ASDayVM(settings: self.settingsM, day: day)
+        dayVM.dayM.value.daySelected = true
+        return dayVM
+    }
+    
     //MARK: private methods
     
     internal func checkSelection(day : ASDayM) {

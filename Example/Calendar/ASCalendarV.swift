@@ -61,6 +61,10 @@ class ASCalendarV: UIView {
                 [unowned self] in
                 self.headerSeparatorV.backgroundColor = $0
             }
+            theme.headerTextFont.bindAndFire {
+                [unowned self] in
+                self.headerLabel.font = $0
+            }
         }
     }
     
