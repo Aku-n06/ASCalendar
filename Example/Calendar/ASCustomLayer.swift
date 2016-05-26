@@ -90,7 +90,9 @@ class ASCustomLayer: UIView {
         mainWindow.addConstraints([topConstraint,bottomConstraint,leftConstraint,rightConstraint])
         //create black layer
         self.blackLayer = UIView()
-        self.blackLayer.backgroundColor = UIColor.clearColor()
+        self.blackLayer.alpha = 0 
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        blackLayer = UIVisualEffectView(effect: darkBlur)
         self.addSubview(blackLayer)
         self.blackLayer.translatesAutoresizingMaskIntoConstraints = false
         //set black layer layout
@@ -190,7 +192,7 @@ class ASCustomLayer: UIView {
     internal func presentationAnimations() {
         self.centerYConstraint.constant = 0
         UIView.animateWithDuration(0.2) {
-            self.blackLayer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+            self.blackLayer.alpha = 1
             self.calendar.alpha = 1
             self.layoutIfNeeded()
         }
@@ -198,7 +200,7 @@ class ASCustomLayer: UIView {
     
     func closingAnimations() {
         UIView.animateWithDuration(0.2, animations: {
-            self.blackLayer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            self.blackLayer.alpha = 0
             self.calendar.alpha = 0
             self.centerYConstraint.constant = 100
             self.layoutIfNeeded()
