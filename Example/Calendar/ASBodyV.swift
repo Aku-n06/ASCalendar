@@ -38,6 +38,20 @@ ASCalendarNamesM {
                 self.reloadCell(1)
                 self.reloadCell(2)
             }
+            self.viewModel?.settingsM.startByMonday.bindAndFire {
+                [unowned self] in
+                if ($0 == false) {
+                    let weekNames = self.getWeekNamesFromSunday()
+                    for i in 0...6 {
+                        self.headerLabels[i].text = weekNames[i]
+                    }
+                } else {
+                    let weekNames = self.getWeekNamesFromMonday()
+                    for i in 0...6 {
+                        self.headerLabels[i].text = weekNames[i]
+                    }
+                }
+            }
         }
     }
     
@@ -91,10 +105,8 @@ ASCalendarNamesM {
         self.addSubview(headerV)
         //show day names label to header
         let dayLabelW = frame.width / 7
-        let weekNames = self.getWeekNames()
         for i in 0...6 {
             let dayLabel = UILabel(frame: CGRect(x: CGFloat(i) * dayLabelW, y: 0, width: dayLabelW, height: 30))
-            dayLabel.text = weekNames[i]
             dayLabel.textAlignment = .Center
             headerLabels.append(dayLabel)
             headerV.addSubview(dayLabel)

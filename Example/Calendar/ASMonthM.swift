@@ -32,10 +32,13 @@ struct ASMonthM {
         let myComponents = calendar.components([.Weekday, .WeekOfYear], fromDate: date!)
         var weekNumber = myComponents.weekOfYear
         var weekDay = myComponents.weekday
-        if weekDay == 1 {// switch to start by monday
-            weekDay = 7
-        } else {
-            weekDay -= 1
+        //switch to start by monday
+        if (settings.startByMonday.value == true) {
+            if weekDay == 1 {
+                weekDay = 7
+            } else {
+                weekDay -= 1
+            }
         }
         //create weeks
         var allWeeks = Array<ASWeekM>()

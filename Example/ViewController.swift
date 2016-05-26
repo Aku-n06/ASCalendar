@@ -23,6 +23,7 @@ class ViewController: UIViewController, ASCalendarDelegate {
     @IBAction func openDefault(sender : UIButton) {
         let calendar = ASCalendar()
         calendar.delegate = self
+        calendar.setMondayFirstWeekDay(true)
         calendar.showCalendarAsLayer()
     }
 

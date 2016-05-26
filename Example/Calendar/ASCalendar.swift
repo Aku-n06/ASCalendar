@@ -76,6 +76,14 @@ class ASCalendar: NSObject {
         calendarSettings.selectionStyle.value = style
     }
     
+    func setMondayFirstWeekDay(flag : Bool) {
+        self.calendarSettings.startByMonday.value = flag
+    }
+    
+    func setSundayFirstWeekDay(flag : Bool) {
+        self.calendarSettings.startByMonday.value = !flag
+    }
+    
     //MARK: theme public methods
     
     func configureHeader(backgroundColor: UIColor?, textColor: UIColor?, textFont : UIFont?, separationLineColor: UIColor?) {

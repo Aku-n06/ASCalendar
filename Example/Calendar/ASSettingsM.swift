@@ -23,6 +23,8 @@ class ASSettingsM : NSObject {
     //interval of available selections
     var firstSelectableDate : Dynamic<(day : Int, month : Int, year: Int)>!
     var lastSelectableDate : Dynamic<(day : Int, month : Int, year: Int)>!
+    //other settings
+    var startByMonday = Dynamic(true)
     
     init(month : Int, year : Int) {
         super.init()

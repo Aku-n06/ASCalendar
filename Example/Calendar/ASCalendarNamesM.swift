@@ -9,13 +9,14 @@
 import Foundation
 
 protocol ASCalendarNamesM {
-    func getWeekNames() -> Array<String>
+    func getWeekNamesFromMonday() -> Array<String>
+    func getWeekNamesFromSunday() -> Array<String>
     func getMonthNames() -> Array<String>
 }
 
 extension ASCalendarNamesM {
     
-    func getWeekNames() -> Array<String> {
+    func getWeekNamesFromMonday() -> Array<String> {
         //get day names
         let formatter = NSDateFormatter()
         formatter.locale = NSLocale.currentLocale()
@@ -26,6 +27,18 @@ extension ASCalendarNamesM {
         }
         //move sunday at the end of the week
         weekDays.append(String(fullWeekDays[0].characters.first!).uppercaseString)
+        return weekDays
+    }
+    
+    func getWeekNamesFromSunday() -> Array<String> {
+        //get day names
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale.currentLocale()
+        let fullWeekDays = formatter.weekdaySymbols
+        var weekDays = Array<String>()
+        for i in 0...6 {
+            weekDays.append(String(fullWeekDays[i].characters.first!).uppercaseString)
+        }
         return weekDays
     }
     
