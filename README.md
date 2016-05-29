@@ -5,29 +5,29 @@
 - Just copy the Example/Calendar folder to your project
 
 - Or, if you are using CocoaPod, add the followind line to your Podfile (adding the use_frameworks! flag at the end) :
-    ```swift
+```script
     pod 'ASCalendar', :git => 'https://github.com/scamps88/ASCalendar.git'
-    ```
+```
     
 ### implementation :
 - To show a calendar in your current window simply add:
-   ```swift
+```swift
     let calendar = ASCalendar()
     calendar.showCalendarAsLayer()
-    ```
+```
 - To check what day the user has selected use the ASCalendarDelegate (like in the example):
-   ```swift
+```swift
     calendar.delegate = self
-    ```
-    ```swift
+```
+```swift
     func calendarSelect(day: Int, week: Int, month: Int, year: Int) {
         NSLog("%d-%d-%d (%d)", day, month, year, week)
     }
-    ```
+```
 -to close the calendar the user can tap outside it (like a popover) or you can manually close it calling:
-    ```swift
+```swift
     calendar.hideCalendar()
-    ```
+```
 ### settings :
 - By defaul ASCalendar is set to give a day selection but you can also switch to week mode (in any time):
 ```swift
