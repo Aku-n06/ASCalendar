@@ -41,15 +41,19 @@
 ```
 - to set a specific month-year to show, you can use at any time:
 ```swift
-    calendar.setcurrentPage(month: 6, year: 2035)
+    //month: 06, year: 2035
+    calendar.setcurrentPage(6, year: 2035)
 ```
 - you can also set a specific interval in witch the user can select a day, disabling all the other days:
 ```swift
-    calendar.setFirstSelectableDate(15, month: 02, year: 2018)
-    calendar.setLastSelectableDate(20, month: 02, year: 2018)
+    //the range will start by day:15 month: 02, year: 2018
+    calendar.setFirstSelectableDate(15, month: 2, year: 2018)
+    //the upper limit of the selectable range will be day:20 month: 02, year: 2018
+    calendar.setLastSelectableDate(20, month: 2, year: 2018)
 ```
 - than, of course, you can set a specific day/week manually in this way:
 ```swift
+    //set day or week selected by day:13 month: 04, year: 2044
     calendar.setSelectedDay(13, month: 04, year: 2044)
 ```
 ### customisations :
@@ -60,4 +64,5 @@
   func configureBodyHeader(backgroundColor: UIColor?, textColor: UIColor?, textFont: UIFont?, separationLineColor: UIColor?)
   func configureBody(backgroundColor: UIColor?, monthTextColor: UIColor?, monthTextFont: UIFont?, separationLineColor: UIColor?)
   func configureDay(selectableTextColor: UIColor?, unselectableTextColor: UIColor?, selectedTextColor: UIColor?, TextFont: UIFont?)
+  func configureSelections(selectionColor: UIColor?, daySelectionSize: CGFloat?, weekSelectionHeight: CGFloat?)
 ```
