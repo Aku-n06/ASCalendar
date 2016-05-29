@@ -1,5 +1,5 @@
 # ASCalendar
-
+![alt tag](https://github.com/scamps88/ASCalendar/blob/master/Documentations/calendar.png)
 ### installation :
 
 - Just copy the Example/Calendar folder to your project
