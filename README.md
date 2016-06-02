@@ -66,3 +66,6 @@
   func configureDay(selectableTextColor: UIColor?, unselectableTextColor: UIColor?, selectedTextColor: UIColor?, TextFont: UIFont?)
   func configureSelections(selectionColor: UIColor?, daySelectionSize: CGFloat?, weekSelectionHeight: CGFloat?)
 ```
+### licence :
+
+ASBubbleMenu is available under the MIT license. See the LICENSE file for more info.
