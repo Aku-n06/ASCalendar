@@ -1,5 +1,5 @@
 # ASCalendar
-![alt tag](https://github.com/scamps88/ASCalendar/blob/master/Documentations/calendar.png)
+![alt tag](https://github.com/scamps88/ASCalendar/blob/master/Documentations/header.png)
 ### installation :
 
 - Just copy the Example/Calendar folder to your project
@@ -57,7 +57,7 @@
     calendar.setSelectedDay(13, month: 04, year: 2044)
 ```
 ### customisations :
-- You can customize the colors, the fonts, and set specific selection sizes of this calendar. In general the customisations functions start by "calendar.configure...". Thanks to MVVM pattern you can apply any customisation at anytime, they will applied immediately
+- You can customize the colors, the fonts, and set specific selection sizes of this calendar. In general the customisations functions start by "calendar.configure...". You should customize the calendar before showing it.
 
 ```swift
   func configureHeader(backgroundColor: UIColor?, textColor: UIColor?, textFont : UIFont?, separationLineColor: UIColor?)
@@ -65,6 +65,11 @@
   func configureBody(backgroundColor: UIColor?, monthTextColor: UIColor?, monthTextFont: UIFont?, separationLineColor: UIColor?)
   func configureDay(selectableTextColor: UIColor?, unselectableTextColor: UIColor?, selectedTextColor: UIColor?, TextFont: UIFont?)
   func configureSelections(selectionColor: UIColor?, daySelectionSize: CGFloat?, weekSelectionHeight: CGFloat?)
+```
+
+- There are also 4 defaults theme you can easily set with :
+```swift
+  calendar.theme.defaults(index)
 ```
 ### licence :
 
