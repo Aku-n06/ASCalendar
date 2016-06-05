@@ -27,16 +27,25 @@ ASCalendarNamesM {
             self.viewModel?.settingsM.selectedMonth.bindAndFire{
                 [unowned self] in
                 _ = $0
-                self.reloadCell(0)
-                self.reloadCell(1)
-                self.reloadCell(2)
+                self.reloadData()
             }
+            
+            self.viewModel?.settingsM.startByMonday.bindAndFire{
+                [unowned self] in
+                _ = $0
+                self.reloadData()
+            }
+            
+            self.viewModel?.settingsM.selectionStyle.bindAndFire{
+                [unowned self] in
+                _ = $0
+                self.reloadData()
+            }
+            
             self.viewModel?.settingsM.selectedDay.bind {
                 [unowned self] in
                 _ = $0
-                self.reloadCell(0)
-                self.reloadCell(1)
-                self.reloadCell(2)
+                self.reloadData()
             }
             self.viewModel?.settingsM.startByMonday.bindAndFire {
                 [unowned self] in
@@ -153,6 +162,12 @@ ASCalendarNamesM {
             monthsV.append(monthV)
         }
         self.scrollView.contentSize = CGSize(width: width, height: height * 3)
+    }
+    
+    func reloadData() {
+        self.reloadCell(0)
+        self.reloadCell(1)
+        self.reloadCell(2)
     }
     
 }
