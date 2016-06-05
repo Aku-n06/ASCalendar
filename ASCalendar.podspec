@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author             = { "Alberto Scampini" => "alberto.scampini" }
   s.platform     = :ios, '7.1'
+  s.source       = { :git => "https://github.com/scamps88/ASCalendar.git", :tag => "1.0.0" }
   s.source_files  = "Example/Calendar", "Example/Calendar/*.swift"
   s.resources = "Example/Calendar/*.png"
   s.framework  = 'SystemConfiguration'
