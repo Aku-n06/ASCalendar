@@ -7,6 +7,7 @@
 - Or, if you are using CocoaPod, add the followind line to your Podfile (adding the use_frameworks! flag at the end) :
 ```script
     pod 'ASCalendar', :git => 'https://github.com/scamps88/ASCalendar.git'
+    use_frameworks!
 ```
     
 ### implementation :
