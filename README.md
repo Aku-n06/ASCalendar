@@ -74,4 +74,4 @@
 ```
 ### licence :
 
-ASBubbleMenu is available under the MIT license. See the LICENSE file for more info.
+ASCalendar is available under the MIT license. See the LICENSE file for more info.
