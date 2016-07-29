@@ -1,5 +1,7 @@
 # ASCalendar
 ![alt tag](https://github.com/scamps88/ASCalendar/blob/master/Documentations/header.png)
+
+[try it on appetize](https://appetize.io/app/tqm3jf79u3m0apxujq46gm2rgm?device=iphone6s&scale=75&orientation=portrait&osVersion=9.3)
 ### installation :
 
 - Just copy the Example/Calendar folder to your project
