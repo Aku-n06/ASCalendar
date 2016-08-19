@@ -2,15 +2,28 @@
 ![alt tag](https://github.com/scamps88/ASCalendar/blob/master/Documentations/header.png)
 
 [try it on appetize](https://appetize.io/app/tqm3jf79u3m0apxujq46gm2rgm?device=iphone6s&scale=75&orientation=portrait&osVersion=9.3)
-### installation :
 
-- Just copy the Example/Calendar folder to your project
+## Installation
 
-- Or, if you are using CocoaPod, add the followind line to your Podfile (adding the use_frameworks! flag at the end) :
-```script
-    pod 'ASCalendar', :git => 'https://github.com/scamps88/ASCalendar.git'
-    use_frameworks!
+#### CocoaPods
+You can use [CocoaPods](http://cocoapods.org/) to install `ASCalendar` by adding it to your `Podfile`:
+
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+pod 'ASCalendar'
 ```
+
+To get the full benefits import `ASCalendar` wherever you import UIKit
+
+``` swift
+import UIKit
+import ASCalendar
+```
+
+#### Manually
+1. Download and drop ```/Example/Calendar``` folder in your project.  
+2. Congratulations!  
     
 ### implementation :
 - To show a calendar in your current window simply add:
